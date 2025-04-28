@@ -1,11 +1,86 @@
 import Image from "next/image";
+import Spacefiller from "../../components/Spacefiller";
 
 export default function Home() {
   return (
     <>
       <div>
         Hello World  
-      </div>    
+      </div>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      <Spacefiller/>
+      
     </>
   );
 }
