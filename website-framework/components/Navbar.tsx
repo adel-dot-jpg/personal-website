@@ -9,7 +9,7 @@ const Navbar = () => {
   <nav className="z-30 py-7 px-3 flex relative justify-end pr-10 items-center select-none">
     
     <Link href="/adel_resume.pdf" className="cursor-pointer left-10 absolute active:brightness-50 select-none" draggable={false}>
-      <div className="text-3xl text-white border-2 border-white rounded-lg py-2 px-5 ml-0 hover:bg-indigo-900">
+      <div className="text-3xl text-white border-1 border-white rounded-lg py-2 px-5 ml-0 hover:bg-indigo-950">
         <Image src={"/resume.svg"} alt="resume icon" width={45} height={45} className="inline-block pr-1" draggable={false}/>
         <span className="align-middle">Resume</span>
       </div>

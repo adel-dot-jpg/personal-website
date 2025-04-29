@@ -24,10 +24,3 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
-
-Navbar {
-  font-family: "Kumbh Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-}
