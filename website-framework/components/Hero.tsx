@@ -18,8 +18,8 @@ const Hero = () => {
 			I'm a 3rd-year computer engineering student based in <strong>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology.
 			</h1>
 
-			<p className='pb-5 px-10 md:px-30 text-xl'>
-				<code><strong>Current Status:</strong> Looking for an internship in Computer Engineering. (and trying to break a WPM of 200)</code>
+			<p className='pb-5 px-10 md:px-30 text-xl text-[var(--secondary)]'>
+				<code><strong>Current Status:</strong> Looking for an internship in Computer Engineering. (and trying to break my WPM record of 196)</code>
 			</p>
 
 			<Image
@@ -28,6 +28,7 @@ const Hero = () => {
 				height={100}
 				width={100}
 				className='mx-auto pb-2'
+				unoptimized={true}
 			/>
 		</div>
 	</section>

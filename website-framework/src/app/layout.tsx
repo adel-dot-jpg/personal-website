@@ -17,7 +17,10 @@ const bodyFont = DM_Sans ({
 
 export const metadata: Metadata = {
   title: "Adel Faruque",
-  description: "Adel Faruque's Portfolio Website Homepage",
+  description: "Showcasing my projects, experiences, and quirks to the world",
+  icons: {
+    icon: "/favicon.ico"
+  }
 };
 
 export default function RootLayout({
