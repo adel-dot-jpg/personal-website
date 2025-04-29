@@ -6,7 +6,7 @@ import ToggleMenu from "./ToggleMenu"
 const Navbar = () => {
 
   return (
-  <nav className="top-0 z-30 py-5 px-3 flex relative justify-end pr-10 items-center border-2 border-green-500">
+  <nav className="z-30 py-7 px-3 flex relative justify-end pr-10 items-center">
     
     <Link href="/adel_resume.pdf" className="cursor-pointer left-10 absolute active:brightness-50">
       <div className="text-3xl text-white border-2 border-white rounded-lg py-2 px-5 ml-0 hover:bg-indigo-900">
