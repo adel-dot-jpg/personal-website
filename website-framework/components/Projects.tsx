@@ -5,7 +5,7 @@ import { PROJECTS } from '../../constants'
 const Projects = () => {
   return (
 	<>
-		<h2 className='border-0 border-red-500'>
+		<h2 className='border-0 border-red-500 font-bold'>
 			Projects
 		</h2>
 		<div className='border-0 border-red-500 flex justify-around flex-col xl:flex-row'>

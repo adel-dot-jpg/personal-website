@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #8d8696;
-  --foreground: #160F1F;
-  --secondary: #b386c5;
+  --background: #7c6699;
+  --foreground: #483166;
+  --secondary: #dcabef;
+  --radial: #f19fff;
 }
 
 @theme inline {
@@ -17,7 +18,8 @@
   :root {
     --background: #160F1F;
     --foreground: #DCD2EA;
-    --secondary: #7d5d8a;
+    --secondary: #5a3f65;
+    --radial: #473959;
   }
 }
 
@@ -29,5 +31,5 @@ body {
 h2 {
   font-size: 3rem;
   padding: 0 5.5rem;
-  margin-top: 30vh;
+  margin-top: 7vh;
 }
