@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
 	{ href: '/', key: 'home', label: 'Home', },
-	{ href: '/', key: 'contact', label: 'Contact' },
 	{ href: '#projects', key: 'projects', label: 'Projects' },
+	{ href: '#contact', key: 'contact', label: 'Contact' },
 ]
 
 export const PROJECTS = [
@@ -11,4 +11,10 @@ export const PROJECTS = [
 
 export const EXPERIENCES = [
 	{ place: 'Toronto Metropolitan University', key: 'TMU', title: 'Computer Engineering, B.Eng', date: 'April 2027', icon: '/tmu.jpg', },
+]
+
+export const CONTACTS = [
+	{ platform: 'GitHub', icon: '/github.svg', href: "https://github.com/adel-dot-jpg", key: "GH", },
+	{ platform: 'LinkedIn', icon: '/linkedin.png', href: "https://www.linkedin.com/in/adel-faruque-1873b5295/", key: "LI", },
+	{ platform: 'Gmail', icon: '/gmail.png', href: "mailto:adelfaruque1@gmail.com", key: "GM", },
 ]
