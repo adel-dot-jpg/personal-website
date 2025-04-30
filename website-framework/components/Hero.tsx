@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-	<section className='flex flex-col bg-[radial-gradient(closest-side_at_35%_40%,_var(--radial),_transparent)]'>
+	<section id="hero" className='flex flex-col bg-[radial-gradient(closest-side_at_35%_40%,_var(--radial),_transparent)]'>
 		<Image
 			src="name.svg"
 			alt='Adel Faruque'

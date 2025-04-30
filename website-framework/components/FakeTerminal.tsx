@@ -15,7 +15,8 @@ type FakeTerminalProps = {
 
 export default function FakeTerminal({ title, description, technologies, status, updated, href }: FakeTerminalProps) {
   return (
-    <div className="max-w-xl rounded-sm border border-gray-700 bg-black shadow-lg my-10 mx-auto lg:m-10">
+    <div className='flex'>
+    <div className="w-full sm:max-w-[620px] rounded-sm border border-gray-700 bg-black shadow-2xl my-10 mx-auto ">
       <div className="bg-zinc-800 text-white flex items-center px-3 py-2 text-sm font-medium pt-3">
         <div className='bg-black px-2 pt-1 pb-3 rounded-lg w-[200px] absolute mt-3'>
           <Image
@@ -48,10 +49,11 @@ export default function FakeTerminal({ title, description, technologies, status,
         {'>'} Description: {description}<br/>
         {'>'} Stack: {technologies}<br/>
         {'>'} Status: {status} | Last updated: {updated}<br/>
-        <span className='text-green-400 underline hover:text-green-300 active:text-green-700'><Link href={`${href}`}>Full Project Page</Link></span><br/>
+        <span className='text-green-400 underline hover:text-green-300 active:text-green-700 hover:bg-green-950 '><Link href={`${href}`}>Full Project Page!</Link></span><br/>
 
-        <span className='text-gray-700 text-sm'>C:\Users\adelf\projects\"{title}"{'>'}</span><span className="animate-pulse">|</span>
+        <span className='text-gray-700 text-sm'>C:\Users\adelf\projects\"{title}"{'>'}<span className="animate-pulse text-white">_</span></span>
       </div>
+    </div>
     </div>
   );
 }

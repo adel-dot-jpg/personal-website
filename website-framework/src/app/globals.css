@@ -5,6 +5,7 @@
   --foreground: #483166;
   --secondary: #dcabef;
   --radial: #f19fff;
+  --linear: #816b9d;
 }
 
 @theme inline {
@@ -19,17 +20,29 @@
     --background: #160F1F;
     --foreground: #DCD2EA;
     --secondary: #5a3f65;
-    --radial: #473959;
+    --radial: #3c2f4d;
+    --linear: #1c1327;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  ::selection {
+    background-color: red;
+    color: white;
+  }
 }
 
 h2 {
   font-size: 3rem;
+  font-weight: 600;
   padding: 0 5.5rem;
   margin-top: 7vh;
+}
+
+@media (width >= 64rem) {
+  h2 {
+    padding: 0 15rem;
+  }
 }

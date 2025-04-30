@@ -4,11 +4,11 @@ import { PROJECTS } from '../../constants'
 
 const Projects = () => {
   return (
-	<>
-		<h2 className='border-0 border-red-500 font-bold'>
+	< section id="projects">
+		<h2>
 			Projects
 		</h2>
-		<div className='border-0 border-red-500 flex justify-around flex-col xl:flex-row'>
+		<div className='flex justify-around flex-col xl:flex-row bg-[radial-gradient(closest-side_at_50%_50%,_var(--radial),_transparent)]'>
 			{PROJECTS.map((proj) => (
 				<FakeTerminal
 					title={proj.title}
@@ -21,7 +21,7 @@ const Projects = () => {
 				/>
 			))}
 		</div>
-	</>
+	</section>
   )
 }
 

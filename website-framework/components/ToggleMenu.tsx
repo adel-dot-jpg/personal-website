@@ -24,7 +24,7 @@ const ToggleMenu = () => {
 		<ul className={`${menuOpen ? "block" : "hidden"} lg:hidden absolute top-[100%] left-0 w-full bg-[var(--secondary)] text-white text-4xl`}>
 			{NAV_LINKS.map((link) => (
 			<li key={link.key} className=" border-1 border-black py-4 text-center font-bold hover:text-indigo-300 hover:bg-indigo-950 active:brightness-75">
-				<a href={link.href}>{link.label}</a>
+				<Link href={link.href} scroll={true}>{link.label}</Link>
 			</li>
 			))}
       	</ul>
