@@ -109,7 +109,7 @@ html {
 
 @keyframes slide-up {
   0% {
-    max-height: 6.5em;
+    max-height: 6em;
   }
   
   100% {
@@ -121,11 +121,11 @@ html {
 
 
 .animate-slide-down {
-  animation: slide-down 0.7s ease-out forwards;
+  animation: slide-down 0.3s ease-out forwards;
 }
 
 .animate-slide-up {
-  animation: slide-up 0.7s ease-in forwards;
+  animation: slide-up 0.3s ease-in forwards;
 }
 
 /* TRANSITIONS */
