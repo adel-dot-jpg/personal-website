@@ -49,7 +49,7 @@ export default function FakeTerminal({ title, description, technologies, status,
         {'>'} Description: {description}<br/>
         {'>'} Stack: {technologies}<br/>
         {'>'} Status: {status} | Last updated: {updated}<br/>
-        <span className='text-green-400 underline hover:text-green-300 active:text-green-700 hover:bg-green-950 '><Link href={`${href}`}>Full Project Page!</Link></span><br/>
+        <span className='text-green-400 underline hover:text-green-300 active:text-green-700 hover:bg-green-900 w-fit'><Link href={`${href}`}>Full Project Page!</Link></span><br/>
 
         <span className='text-gray-700 text-sm'>C:\Users\adelf\projects\"{title}"{'>'}<span className="animate-pulse text-white">_</span></span>
       </div>

@@ -12,7 +12,7 @@ const ExperienceCard = ( {place, title, date, icon}: ExperienceCardProps ) => {
 	<>
 		<div className='flex flex-row border-0 border-orange-500 justify-between items-center max-w-[600px] mx-auto my-7 bg-gradient-to-r from-transparent via-[var(--linear)] to-transparent'>
 			<div className='border-0 border-green-500 flex flex-row items-center'>
-				<div className=' border-0 border-yellow-300 rounded-md bg-blue-950 w-17 h-17 content-center hover:brightness-120 cursor-pointer mr-3.5'>
+				<div className=' border-0 border-yellow-300 rounded-md bg-blue-950 w-17 h-17 content-center hover:brightness-120 mr-3.5'>
 					<Image
 						src={icon}
 						alt={`${title} icon`}
@@ -24,10 +24,10 @@ const ExperienceCard = ( {place, title, date, icon}: ExperienceCardProps ) => {
 				</div>
 				<div className='border-0 border-blue-500'>
 					<span className='font-bold text-lg'>{place}</span><br/>
-					<span className='text-gray-400'>{title}</span>
+					<span className='text-[var(--secondary)]'>{title}</span>
 				</div>
 			</div>
-			<div className='text-gray-400 border-0 border-indigo-500 m-4'>
+			<div className='text-[var(--secondary)] brightness-150 border-0 border-indigo-500 m-4'>
 				{date}
 			</div>
 		</div>

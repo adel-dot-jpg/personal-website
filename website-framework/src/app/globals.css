@@ -5,7 +5,7 @@
   --foreground: #483166;
   --secondary: #dcabef;
   --radial: #f19fff;
-  --linear: #816b9d;
+  --linear: #8c75ab;
 }
 
 @theme inline {
@@ -21,7 +21,7 @@
     --foreground: #DCD2EA;
     --secondary: #5a3f65;
     --radial: #3c2f4d;
-    --linear: #1c1327;
+    --linear: #22172f;
   }
 }
 

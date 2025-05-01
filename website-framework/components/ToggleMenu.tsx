@@ -17,7 +17,7 @@ const ToggleMenu = () => {
 	<>
 		<Image
 			src={"/menu.svg"} alt="menu icon" height={25} width={45}
-			className="lg:hidden cursor-pointer active:brightness-75"
+			className="lg:hidden cursor-pointer brightness-75 active:brightness-50"
 			onClick={foldableMenu}
 		/>
 
