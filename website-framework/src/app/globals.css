@@ -46,3 +46,109 @@ h2 {
     padding: 0 15rem;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background); /* scrollbar background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--foreground); /* draggable handle */
+  border-radius: 8px;
+  border: 5px solid var(--background); /* thinner handle + space between handle and right edge of page */
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover { /* useless, who drags the scrollbar? */
+  background-color: var(--radial);
+}
+
+
+/* ANIMATIONS */
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+      transform: translateY(0rem);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    max-height: 0;
+  }
+  
+  100% {
+    max-height: 6.5em;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    max-height: 6.5em;
+  }
+  
+  100% {
+    max-height: 0%;
+  }
+}
+
+@keyframes highlighter {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100em;
+  }
+}
+
+
+
+
+.animate-slide-down {
+  animation: slide-down 0.7s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.7s ease-in forwards;
+}
+
+.animate-highlight {
+  animation: highlighter 5s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+/* TRANSITIONS */
+
+.view-transition-old {
+  animation: slide-out 0.5s ease-out both;
+}
+
+.view-transition-new {
+  animation: slide-in 0.5s ease-out both;
+}

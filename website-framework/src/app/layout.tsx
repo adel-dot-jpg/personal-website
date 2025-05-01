@@ -16,7 +16,7 @@ const bodyFont = DM_Sans ({
 })
 
 export const metadata: Metadata = {
-  title: "Adel Faruque",
+  title: "Adel Faruque — Where Art Meets Technology",
   description: "Showcasing my projects, experiences, and quirks to the world",
   icons: {
     icon: "/favicon.ico"
@@ -35,7 +35,7 @@ export default function RootLayout({
         <Navbar/>
         </div>
         <div className={bodyFont.className}>
-          <main className = "relative overflow-hidden">
+          <main className = "relative overflow-hidden view-transition-new">
             {children}
           </main>
         </div>

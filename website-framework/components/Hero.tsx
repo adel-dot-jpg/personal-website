@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "next/image";
+import CopyTooltip from './CopyTooltip';
 
 const Hero = () => {
   return (
@@ -14,16 +15,21 @@ const Hero = () => {
 		/>
 
 		<div>
-			<h1 className='text-l pt-5 pb-5 px-10 md:pb-10 md:pt-10 md:px-30 md:text-xl max-w-[1000px]'>
-			I'm a 3rd-year computer engineering student based in <strong>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology.
-			</h1>
+				<h1 className='text-l pt-5 pb-5 px-10 md:pb-10 md:pt-10 md:px-30 md:text-xl max-w-[1100px]'>
+					I'm a 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology. 
+					<br/>You can reach me at:
+					<div className='border-0 border-green-500 text-nowrap flex flex-row align-middle'>
+						<span className='text-[var(--secondary)] px-1 brightness-200'>AdelFaruque1@gmail.com</span>
+						<CopyTooltip/>
+					</div>
+				</h1>
 
 			<p className='pb-5 px-10 md:px-30 text-xl text-[var(--secondary)]'>
 				<code><strong>Current Status:</strong> Looking for an internship in Computer Engineering. (and trying to break my WPM record of 196)</code>
 			</p>
 
 			<Image
-				src="/scroll-down.gif"
+				src='/scroll-down.gif'
 				alt='scroll down'
 				height={100}
 				width={100}
