@@ -4,13 +4,24 @@ import CopyTooltip from './CopyTooltip';
 
 const Hero = () => {
   return (
-	<section id="hero" className='flex flex-col bg-[radial-gradient(closest-side_at_35%_40%,_var(--radial),_transparent)]'>
+	<section id="hero" className='flex flex-col'>
 		<Image
 			src="name.svg"
 			alt='Adel Faruque'
 			height={1000}
 			width={1000}
 			className='pl-20 pt-10 pb-5 pr-5 select-none'
+			draggable={false}
+		/>
+
+		<div className='absolute bg-[radial-gradient(closest-side_at_35%_40%,_var(--radial),_transparent)] -z-2 h-[100vh] w-full border-0 border-red-500'></div>
+
+		<Image
+			src="CBT.svg"
+			alt='cherry blossom tree (CBT)'
+			height={1000}
+			width={1200}
+			className='absolute -z-1 -ml-90'
 			draggable={false}
 		/>
 
