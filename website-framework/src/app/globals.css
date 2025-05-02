@@ -51,6 +51,33 @@ html {
   scroll-behavior: smooth;
 }
 
+.text-gold {
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    #d4af37 0%,
+    #d4af37 45%,
+    #fff8dc 50%,
+    #d4af37 55%,
+    #d4af37 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.dead-button {
+  background-color: #ddd;
+  color: #787878;
+  border: 1px solid #ccc;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 /* For Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   width: 15px;
@@ -117,6 +144,16 @@ html {
   }
 }
 
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 110%;
+  }
+}
+
+
 
 
 
@@ -136,4 +173,4 @@ html {
 
 .view-transition-new {
   animation: slide-in 0.5s ease-out both;
-}
+};

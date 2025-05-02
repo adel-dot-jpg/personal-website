@@ -16,7 +16,7 @@ const bodyFont = DM_Sans ({
 })
 
 export const metadata: Metadata = {
-  title: "Adel Faruque — Where Art Meets Technology",
+  title: "Adel Faruque — Art Meets Technology",
   description: "Showcasing my projects, experiences, and quirks to the world",
   icons: {
     icon: "/favicon.ico"
