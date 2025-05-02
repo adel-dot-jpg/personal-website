@@ -168,7 +168,7 @@ html {
 /* TRANSITIONS */
 
 .view-transition-old {
-  animation: slide-out 0.5s ease-out both;
+  animation: slide-out 0.5s ease-out forwards;
 }
 
 .view-transition-new {
