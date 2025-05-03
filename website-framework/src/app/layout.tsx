@@ -35,7 +35,7 @@ export default function RootLayout({
         <Navbar/>
         </div>
         <div className={bodyFont.className}>
-          <main className = "relative overflow-hidden view-transition-new">
+          <main className = "relative overflow-hidden load-in-transition">
             {children}
           </main>
         </div>
