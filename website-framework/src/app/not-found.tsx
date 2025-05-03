@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link";
+import TransitionLink from "../../components/TransitionLink";
 
 export default function NotFound() {
 	return (
@@ -14,9 +14,9 @@ export default function NotFound() {
 		<div className="absolute -z-20 h-[35vh] w-[35vh] bg-[var(--radial)] rounded-full"></div>
 		<h1 className="text-5xl font-bold">404.</h1>
 		<p className="text-xl mt-4 bg-[var(--secondary)] px-3">The page you're looking for doesn't exist. try going back 
-			<Link href='/' className="text-[var(--secondary)] brightness-200 underline ml-1">
+			<TransitionLink href='/' className="text-[var(--secondary)] brightness-200 underline ml-1">
 				 Home.
-			</Link>
+			</TransitionLink>
 			<br/> Or stay here, where it's quieter...
 		</p>
 	  </div>

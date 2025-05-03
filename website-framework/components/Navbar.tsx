@@ -1,7 +1,8 @@
-import Link from "next/link"
 import { NAV_LINKS } from "../../constants"
 import Image from "next/image"
 import ToggleMenu from "./ToggleMenu"
+import TransitionLink from "./TransitionLink"
+import Link from 'next/link'
 
 const Navbar = () => {
 
@@ -17,9 +18,9 @@ const Navbar = () => {
 
     <ul className="hidden h-full gap-16 lg:flex flex-row"> 
       {NAV_LINKS.map((link) => (
-        <Link href={link.href} key={link.key} className="cursor-pointer text-xl hover:font-bold active:text-[var(--secondary)]" draggable={false} scroll={true}>
+        <TransitionLink href={link.href} key={link.key} className="cursor-pointer text-xl hover:font-bold active:text-[var(--secondary)]">
           {link.label}
-        </Link>
+        </TransitionLink>
       ))}
     </ul>
     

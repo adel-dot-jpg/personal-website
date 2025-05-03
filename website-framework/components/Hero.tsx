@@ -14,7 +14,7 @@ const Hero = () => {
 			draggable={false}
 		/>
 
-		<div className='absolute bg-[radial-gradient(closest-side_at_35%_40%,_var(--radial),_transparent)] -z-2 h-[100vh] w-full border-0 border-red-500'></div>
+		<div className='absolute bg-[radial-gradient(closest-side_at_35%_40%,_var(--radial),_transparent)] -z-2 h-[100vh] w-full'></div>
 
 		<Image
 			src="CBT.svg"
@@ -27,10 +27,10 @@ const Hero = () => {
 
 		<div>
 				<h1 className='text-l pt-5 pb-5 px-10 md:pb-10 md:pt-10 md:px-30 md:text-xl max-w-[1100px]'>
-					Hello! I'm a 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology. 
+					Hello! I'm a 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology.
 					<br/>You can reach me at:
-					<div className='border-0 border-green-500 text-nowrap flex flex-row align-middle'>
-						<span className='text-[var(--secondary)] px-1 brightness-200'>AdelFaruque1@gmail.com</span>
+					<div className='text-nowrap flex flex-row align-middle'>
+						<span className='text-[var(--secondary)] pr-1 brightness-200'>AdelFaruque1@gmail.com</span>
 						<CopyTooltip/>
 					</div>
 				</h1>
@@ -41,7 +41,7 @@ const Hero = () => {
 
 			<Image
 				src='/scroll-down.gif'
-				alt='scroll down'
+				alt='scroll down arrow'
 				height={100}
 				width={100}
 				className='mx-auto pb-2'

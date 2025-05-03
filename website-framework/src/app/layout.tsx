@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import {Kumbh_Sans} from "next/font/google";
-import { DM_Sans } from "next/font/google";
+import { Kumbh_Sans, DM_Sans } from "next/font/google";
 
 const navFont = Kumbh_Sans ({
   subsets: ["latin"],
@@ -36,7 +35,9 @@ export default function RootLayout({
         </div>
         <div className={bodyFont.className}>
           <main className = "relative overflow-hidden load-in-transition">
-            {children}
+            <div id='children-wrapper'>
+              {children}
+            </div>
           </main>
         </div>
         <Footer/>

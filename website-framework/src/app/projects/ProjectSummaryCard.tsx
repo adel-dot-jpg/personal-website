@@ -14,10 +14,17 @@ type Project = {
 };
 
 export default function ProjectSummaryCard(project: Project) {
+
+  // any links to home (no link available at the time) should not open in a new tab since it leads to the same site you're already on
+  var isHome = project.projLink == '/';
+  const projtarg = isHome ? undefined : '_blank';
+  isHome = project.repoLink == '/';
+  const repotarg = isHome ? undefined : '_blank';
+
   return (
     <div className="flex justify-center px-4 sm:px-6 md:px-10 xl:px-[10vw] my-6">
       <div
-        className="w-full rounded-2xl border border-[var(--foreground)] border-l-30 overflow-hidden shadow-lg">
+        className="w-full rounded-2xl border border-[var(--radial)] border-l-30 overflow-hidden shadow-2xl shadow-black/50">
         <div
           className="relative bg-contain bg-center"
           style={{
@@ -30,7 +37,7 @@ export default function ProjectSummaryCard(project: Project) {
 
             <div className="flex-1">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2">{project.title}</h2>
-              <p className="text-sm sm:text-base text-[var(--secondary)] brightness-200 mb-3">{project.description}</p>
+              <p className="text-sm sm:text-base text-[var(--secondary)] brightness-200 mb-3 pt-3">{project.description}</p>
               <p className="text-sm font-bold font-[Consolas] text-yellow-400 text-gold">{project.technologies}</p>
             </div>
 
@@ -46,12 +53,14 @@ export default function ProjectSummaryCard(project: Project) {
                 <a
                   href={project.projLink}
                   className={`px-4 py-2 text-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded transition ${ project.status=="Completed" ? "group" : "dead-button" }`}
+                  target={projtarg}
                 >
                   <p className='pr-4'>View Project <span className="ml-1 group-hover:ml-2 transition-all duration-300 inline-block absolute">→</span></p>
                 </a>
                 <a
                   href={project.repoLink}
                   className="px-4 py-2 text-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded transition group"
+                  target={repotarg}
                 >
                   <p className='pr-4'>GitHub Repo <span className='ml-1 group-hover:ml-2 transition-all duration-300 inline-block absolute'>→</span></p>
                 </a>

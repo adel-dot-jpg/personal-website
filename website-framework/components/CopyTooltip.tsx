@@ -17,7 +17,7 @@ export default function CopyButton() {
   };
 
   return (
-    <div className="inline-block relative border-0 border-red-500 mx-2 -mt-1 group text-sm">
+    <div className="inline-block relative mx-2 -mt-1 group text-sm">
 	{/* Button */}	
       <button
         onClick={handleCopy}

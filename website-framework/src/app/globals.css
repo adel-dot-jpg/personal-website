@@ -47,10 +47,6 @@ h2 {
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .text-gold {
   font-weight: bold;
   background: linear-gradient(
@@ -88,14 +84,26 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--foreground); /* draggable handle */
+  background-color: var(--secondary); /* draggable handle */
   border-radius: 8px;
-  border: 5px solid var(--background); /* thinner handle + space between handle and right edge of page */
-  height: 2px;
+  border: 5px solid var(--background); /* results in thinner handle + space between handle and right edge of page */
+  height: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover { /* useless, who drags the scrollbar? */
   background-color: var(--radial);
+}
+
+::-webkit-scrollbar-thumb:active { /* useless, who drags the scrollbar? */
+  background-color: var(--linear);
+}
+
+@media (max-width: 640px) {
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--secondary); /* draggable handle */
+    border-radius: 0px;
+    border: 4px solid var(--background); /* thinner handle + space between handle and right edge of page */
+  }
 }
 
 
@@ -104,25 +112,34 @@ html {
 @keyframes slide-in {
   0% {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(-2rem);  /* NEW PAGE */
+    filter: blur(8px);
   }
 
   100% {
     opacity: 1;
     transform: translateY(0rem);
+    filter: blur(0);
   }
 }
 
 @keyframes slide-out {
   0% {
-      transform: translateY(0rem);
+      transform: translateY(0rem); /* OLD PAGE */
+      opacity: 1;
+      filter: blur(0);
   }
   
   100% {
-    opacity: 1;
+    opacity: 0;
     transform: translateY(-2rem);
+    filter: blur(8px);
   }
 }
+
+
+/* ↑ NAV PAGE TRANSITIONS ↓ FOLDING MENU CLICK ANIMATIONS*/
+
 
 @keyframes slide-down {
   0% {
@@ -155,14 +172,22 @@ html {
 
 @keyframes load-in {
   0% {
-    opacity: 50;
-    transform: translateY(0.2rem);
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+
+  10% {
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+
+  80% {
+    opacity: 1;
     filter: blur(5px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0rem);
     filter: blur(0);
   }
 }
@@ -170,7 +195,7 @@ html {
 
 
 
-
+/* FOR FOLDING MENU ONLY */
 .animate-slide-down {
   animation: slide-down 0.3s ease-out forwards;
 }
@@ -179,17 +204,22 @@ html {
   animation: slide-up 0.3s ease-in forwards;
 }
 
+
+
 /* TRANSITIONS */
 
-.load-in-transition {
-  animation: load-in 0.2s ease-in forwards;
-  animation-delay: 0s;
+.load-in-transition { /* ONCE ON MOUNT */
+  animation: load-in 0.5s ease-in forwards;
 }
 
-.view-transition-old {
-  animation: slide-out 0.5s ease-out forwards;
+.view-transition-old { /* ON NAVIGATION OLD PAGE SWIPES UP AND OUT */
+  animation: slide-out 0.5s ease-in-out forwards;
+  will-change: opacity, transform;
+  pointer-events: none;
 }
 
-.view-transition-new {
-  animation: slide-in 0.5s ease-out both;
+.view-transition-new { /* ON NAVIGATION NEW PAGE SWIPES DOWN AND IN */
+  animation: slide-in 0.5s ease-in-out forwards;
+  will-change: opacity, transform;
+  pointer-events: none;
 };

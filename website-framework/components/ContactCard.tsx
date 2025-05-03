@@ -13,10 +13,10 @@ const ContactCard = ( {platform, icon, href}: ContactCardProps ) => {
 	
 	<>
 		
-			<div className='flex flex-row border-0 border-orange-500 justify-between items-center max-w-[600px] mx-auto my-7 bg-gradient-to-r from-transparent via-[var(--linear)] to-transparent'>
+			<div className='flex flex-row justify-between items-center max-w-[600px] mx-auto my-7 bg-gradient-to-r from-transparent via-[var(--linear)] to-transparent'>
 			<Link href={href} target='_blank' className='hover:brightness-75 duration-300 inline-block w-full'>
-				<div className='border-0 border-green-500 flex flex-row items-center w-full'>
-					<div className=' border-0 border-yellow-300 rounded-md bg-white w-17 h-17 content-center cursor-pointer mr-3.5'>
+				<div className=' flex flex-row items-center w-full'>
+					<div className=' rounded-md bg-white w-17 h-17 content-center cursor-pointer mr-3.5'>
 						<Image
 							src={icon}
 							alt={`${platform} icon`}
@@ -26,7 +26,7 @@ const ContactCard = ( {platform, icon, href}: ContactCardProps ) => {
 							draggable={false}
 						/>
 					</div>
-					<div className='border-0 border-blue-500'>
+					<div>
 						<span className='font-bold text-lg'>{platform}
 							<Image src='/open.svg' alt='open in new tab' height={25} width={25} className='inline ml-1 -mt-1' />
 						</span><br/>
