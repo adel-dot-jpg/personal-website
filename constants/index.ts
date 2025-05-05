@@ -2,12 +2,12 @@
 
 export const NAV_LINKS = [ /* for navbar/folding menu items */
 	{ href: '/', key: 'home', label: 'Home', },
-	{ href: 'http://localhost:3000/projects', key: 'projects', label: 'Projects' },
-	{ href: 'http://localhost:3000/#contact', key: 'contact', label: 'Contact' },
+	{ href: '/projects', key: 'projects', label: 'Projects' },
+	{ href: '/#contact', key: 'contact', label: 'Contact' },
 ]
 
 export const PROJECTS = [ /* shared among homepage projects section and projects page */
-	{ title: 'Portfolio Website', key: 'personal-website', description: 'A fully responsive personal website built with a mobile-first approach, emphasizing modular component architecture, semantic HTML, and Tailwind CSS utility patterns to ensure maximum code reusability, performance, and maintainability across devices', technologies: 'React, Next.js, TypeScript, TailwindCSS, UI/UX, SEO, GitHub Actions, GitHub Deployment', status: 'Completed', lastUpdate: 'Apr 2025', href: '/',  bg: '/PWss.jpg', projLink: '/', repoLink: 'https://github.com/adel-dot-jpg/personal-website', },
+	{ title: 'Portfolio Website', key: 'personal-website', description: 'A fully responsive personal website built with a mobile-first approach, emphasizing modular component architecture, semantic HTML, and Tailwind CSS utility patterns to ensure maximum code reusability, performance, and maintainability across devices', technologies: 'React, Next.js, TypeScript, TailwindCSS, UI/UX, SEO, GitHub Actions, GitHub Deployment', status: 'Completed', lastUpdate: 'May 2025', href: '/',  bg: '/PWss.jpg', projLink: '/', repoLink: 'https://github.com/adel-dot-jpg/personal-website', },
 	{ title: 'Moon Tracker', key: 'moon-phase', description: 'An all-in-one night sky tracker with moon phase tracking, anomaly alerts, and year-round star maps', technologies: 'React, Next.js, TypeScript, TailwindCSS, mongoDB, Web Scraping (Beautiful Soup), APIs', status: 'Planning', lastUpdate: 'Apr 2025', href: '/',  bg: '/PWss.jpg', projLink: '/', repoLink: '/', },
 ]
 

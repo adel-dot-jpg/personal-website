@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 type Project = {
   title: string;
   key: string;
@@ -16,7 +14,7 @@ type Project = {
 export default function ProjectSummaryCard(project: Project) {
 
   // any links to home (no link available at the time) should not open in a new tab since it leads to the same site you're already on
-  var isHome = project.projLink == '/';
+  let isHome = project.projLink == '/';
   const projtarg = isHome ? undefined : '_blank';
   isHome = project.repoLink == '/';
   const repotarg = isHome ? undefined : '_blank';

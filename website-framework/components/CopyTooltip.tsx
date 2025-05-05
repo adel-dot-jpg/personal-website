@@ -21,7 +21,7 @@ export default function CopyButton() {
 	{/* Button */}	
       <button
         onClick={handleCopy}
-        className='px-2 py-1 font-medium text-white bg-indigo-900 rounded hover:bg-indigo-700 active:bg-indigo-900'>
+        className='px-2 py-1 font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700 active:bg-indigo-900'>
         <Image src='copy.svg' alt="copy to clipboard" height={25} width={25} />
       </button>
 

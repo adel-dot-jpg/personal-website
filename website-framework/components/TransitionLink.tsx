@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Link, { LinkProps } from 'next/link'
-import Router from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 
@@ -56,6 +55,7 @@ export default function TransitionLink ( {href, children, ...props}: TransitionL
 	return (
 		<Link
 			href={href}
+			prefetch={true} // damn lazy loading
 			{...props}
 			onClick={handleNavigation}
 			passHref
