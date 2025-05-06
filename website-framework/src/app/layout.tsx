@@ -78,12 +78,16 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
   },
+  authors: [{ name: 'Adel Faruque', url: 'https://adelfaruque.ca' }],
+};
+
+export const viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#5a3f65' },
   ],
-  authors: [{ name: 'Adel Faruque', url: 'https://adelfaruque.ca' }],
 };
+
 
 export default function RootLayout({
   children,

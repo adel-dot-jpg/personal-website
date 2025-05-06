@@ -5,13 +5,24 @@ import Contact from "../../components/Contact";
 
 export default function Home() {
   return (
-    <>
+    <main>
 
-      <Hero/>
-      <Projects/>
-      <Experience/>
-      <Contact/>
+      <section>
+        <Hero />
+      </section>
+
+      <section>
+        <Projects />
+      </section>
+
+      <section>
+        <Experience />
+      </section>
+
+      <section>
+        <Contact />
+      </section>
       
-    </>
+    </main>
   );
 }
