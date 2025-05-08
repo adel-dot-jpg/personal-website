@@ -23,6 +23,7 @@ export default function TransitionLink ( {href, children, ...props}: TransitionL
 		event.preventDefault(); //hijack link navigation
 
 		const wrapper = document.getElementById('children-wrapper');
+		const loading = document.getElementById('loading');
 
 		function extractPathnameFromHref(href: string): string { //strip domain name from href so it resembles pathname syntax
 			let end = href.length;								 //i.e. http://localhost:3000/projects becomes /projects
@@ -36,21 +37,28 @@ export default function TransitionLink ( {href, children, ...props}: TransitionL
 
 		if (pathname == linkName) return;
 		if (!wrapper) return;
+		if (!loading) return;
 		let hash=false;
 		if (linkName[1]=='#') hash=true;
 
 	// Start the page out transition
 	wrapper.classList.add('view-transition-old');
+	loading.classList.remove('hidden');
+	loading.classList.add('view-transition-new');
 
 	// Delay navigation and page in transition until after the animation finishes
 	if (hash) {
 		setTimeout(() => {
 			router.push(href);
 			wrapper.classList.remove('view-transition-old');
+			loading.classList.remove('view-transition-new')
 			wrapper.classList.add('view-transition-new');
+			loading.classList.add('view-transition-old');
 
 			const cleanup = setTimeout(() => {
-			wrapper.classList.remove('view-transition-new');
+				wrapper.classList.remove('view-transition-new');
+				loading.classList.remove('view-transition-old');
+				loading.classList.add('hidden');
 			}, 500);
 
 			return () => clearTimeout(cleanup);
