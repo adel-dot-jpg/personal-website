@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Kumbh_Sans, DM_Sans } from "next/font/google";
+import PageTransitionManager from "../../components/PageTransitionManager";
 
 const navFont = Kumbh_Sans ({
   subsets: ["latin"],
@@ -97,6 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <PageTransitionManager/>
         <div className={navFont.className}>
         <Navbar/>
         </div>
