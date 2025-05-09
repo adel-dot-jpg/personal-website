@@ -1,7 +1,9 @@
+import Image from "next/image"
+
 const Loading = () => {
   return (
 	<div className="mt-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pt-10 flex justify-center flex-col">
-		<img
+		<Image
 			src={'/kitload.webp'}
 			alt="loading..."
 			height={100}
