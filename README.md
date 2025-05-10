@@ -13,14 +13,14 @@ This is the personal portfolio website of **Adel Faruque**, built using [Next.js
 - 🔧 Built with **Next.js App Router**, **TypeScript**, and **Tailwind CSS**
 - 🚀 Deployed on Vercel with custom domain and automatic HTTPS (SSL)
 
-## 🛠️ Stack
+## Stack
 - **Framework**: Next.js 14+ (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Hosting**: Vercel
 - **Version Control**: Git + GitHub
 
-## 🧠 Goals
+## Goals
 This project is both a resume piece and a learning experience to deepen understanding of:
 - Full-stack modern frontend development
 - Git-based deployment workflows (GitHub ↔ Vercel)
@@ -28,7 +28,7 @@ This project is both a resume piece and a learning experience to deepen understa
 - SEO and metadata management (OpenGraph, Progressive Web App (PWA))
 - Mobile-first responsive design
 
-## 📋 Future Improvements
+## Future Improvements
 - 🕹️ Add interactive gallery or journal template
 - 🌞 Light/dark toggle switch
 - 🔍 Add search functionality for blog/gallery pages
