@@ -17,7 +17,7 @@ const bodyFont = DM_Sans ({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://AdelFaruque.ca"),
+  metadataBase: new URL("https://AdelFaruque.me"),
   title: "Adel Faruque — Art Meets Technology",
   description: "A showcase of full-stack development projects, design work, and technical experiments by Adel Faruque.",
   keywords: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adel Faruque — Art Meets Technology",
     description: "Hi! I'm Adel Faruque, a curious full-stack developer. Explore my projects, experiments, and qualifications on my handcrafted, beautifully designed personal portfolio site- featuring my favorite colour, purple!.",
-    url: "https://adelfaruque.ca",
+    url: "https://adelfaruque.me",
     siteName: "Adel Faruque",
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         alt: "Adel Faruque Portfolio Preview",
       },
     ],
-    locale: "en_CA",
+    locale: "en_US",
     type: "profile",
   },
   twitter: {
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://adelfaruque.ca',
+    canonical: 'https://adelfaruque.me',
     languages: {
-      "en-CA": "https://adelfaruque.ca",
+      "en-CA": "https://adelfaruque.me",
     },
   },
   manifest: '/site.webmanifest',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
   },
-  authors: [{ name: 'Adel Faruque', url: 'https://adelfaruque.ca' }],
+  authors: [{ name: 'Adel Faruque', url: 'https://adelfaruque.me' }],
 };
 
 export const viewport = {
