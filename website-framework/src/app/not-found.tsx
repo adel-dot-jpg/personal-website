@@ -13,7 +13,7 @@ export default function NotFound() {
 		/>
 		<div className='absolute -z-20 h-[35vh] w-[35vh] bg-[var(--radial)] rounded-full'></div>
 		<h1 className='text-5xl font-bold'>404.</h1>
-		<p className='text-xl mt-4 bg-[var(--secondary)] px-3'>The page you&apos;re looking for doesn&apos;t exist. try going back 
+		<p className='text-xl mt-4 bg-[var(--secondary)] px-3 py-2'>The page you&apos;re looking for doesn&apos;t exist. try going back 
 			<TransitionLink href='/' className='text-[var(--secondary)] brightness-200 underline ml-1'>
 				 Home.
 			</TransitionLink>
