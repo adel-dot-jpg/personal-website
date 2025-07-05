@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import { Kumbh_Sans, DM_Sans } from "next/font/google";
 import PageTransitionManager from "../../components/PageTransitionManager";
 import Loading from "../../components/Loading";
+import { ThemeProvider } from 'next-themes';
 
 const navFont = Kumbh_Sans ({
   subsets: ["latin"],
@@ -97,21 +98,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <PageTransitionManager/>
-        <div className={navFont.className}>
-        <Navbar/>
-        </div>
-        <div className={bodyFont.className}>
-          <main className = "relative overflow-hidden load-in-transition">
-            <div id='loading'><Loading/></div>
-            <div id='children-wrapper'>
-              {children}
-            </div>
-          </main>
-        </div>
-        <Footer/>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
+          <PageTransitionManager/>
+          <div className={navFont.className}>
+          <Navbar/>
+          </div>
+          <div className={bodyFont.className}>
+            <main className = "relative overflow-hidden load-in-transition">
+              <div id='loading'><Loading/></div>
+              <div id='children-wrapper'>
+                {children}
+              </div>
+            </main>
+          </div>
+          <Footer/>
+        </ThemeProvider>
       </body>
     </html>
   );
