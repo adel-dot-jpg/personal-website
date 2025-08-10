@@ -13,7 +13,7 @@ const ContactCard = ( {platform, icon, href}: ContactCardProps ) => {
 	
 	<>
 		
-			<div className='flex flex-row justify-between items-center max-w-[600px] mx-auto my-7 bg-gradient-to-r from-transparent via-[var(--linear)] to-transparent'>
+			<div className='flex flex-row justify-between items-center max-w-[600px] mx-auto my-7 bg-gradient-to-r from-transparent via-[var(--linear)] to-transparent border-0 hover:scale-102 duration-200'>
 			<Link href={href} target='_blank' className='hover:brightness-75 duration-300 inline-block w-full'>
 				<div className=' flex flex-row items-center w-full'>
 					<div className=' rounded-md bg-white w-17 h-17 content-center cursor-pointer mr-3.5'>

@@ -10,7 +10,7 @@ const Hero = () => {
 			alt='Adel Faruque'
 			height={1000}
 			width={1000}
-			className='pl-20 pt-10 pb-5 pr-5 select-none'
+			className='pl-20 pt-10 pr-5 select-none'
 			draggable={false}
 		/>
 
@@ -26,7 +26,7 @@ const Hero = () => {
 		/>
 
 		<div>
-				<h1 className='text-l pt-5 pb-5 px-10 md:pb-10 md:pt-10 md:px-30 md:text-xl max-w-[1100px] font-bold'>
+				<h1 className='text-lg pb-5 px-10 md:pb-10 md:pt-10 md:px-30 md:text-xl max-w-[1100px] font-bold'>
 					Hello! I&apos;m a 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology.
 					<br/>You can reach me at:
 					<div className='text-nowrap flex flex-row align-middle'>
@@ -35,8 +35,8 @@ const Hero = () => {
 					</div>
 				</h1>
 
-			<p className='pb-5 px-10 md:px-30 text-xl text-[var(--secondary)]'>
-				<code><strong>Current Status:</strong> Looking for an internship in Computer Engineering. (and trying to break my WPM record of 196)</code>
+			<p className='pb-20 -mt-5 px-10 md:px-30 text-xl text-[var(--secondary)]'>
+				<code><strong>Make me your intern superhero today!</strong> I'm looking for an internship in Computer Engineering. (and trying to break my WPM record of 196)</code>
 			</p>
 
 			<Image
@@ -44,7 +44,7 @@ const Hero = () => {
 				alt='scroll down arrow'
 				height={100}
 				width={100}
-				className='mx-auto pb-2'
+				className='mx-auto -mt-22 mb-25'
 				unoptimized={true}
 			/>
 		</div>
