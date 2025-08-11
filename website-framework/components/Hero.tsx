@@ -27,7 +27,7 @@ const Hero = () => {
 
 		<div>
 				<h1 className='text-lg pb-5 px-10 md:pb-10 md:pt-10 md:px-30 md:text-xl max-w-[1100px] font-bold'>
-					Hello! I&apos;m a 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology.
+					Well hello there! I&apos;m an eager 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology.
 					<br/>You can reach me at:
 					<div className='text-nowrap flex flex-row align-middle'>
 						<span className='text-[var(--secondary)] pr-1 brightness-200'>AdelFaruque1@gmail.com</span>
@@ -36,7 +36,7 @@ const Hero = () => {
 				</h1>
 
 			<p className='pb-20 -mt-5 px-10 md:px-30 text-xl text-[var(--secondary)]'>
-				<code><strong>Make me your intern superhero today!</strong> I'm looking for an internship in Computer Engineering. (and trying to break my WPM record of 196)</code>
+				<code>I'm always ready to turn coffee, code, and curiosity into something amazing. <strong><span className='brightness-140'>Make me your intern superhero today!</span></strong></code>
 			</p>
 
 			<Image
@@ -44,7 +44,7 @@ const Hero = () => {
 				alt='scroll down arrow'
 				height={100}
 				width={100}
-				className='mx-auto -mt-22 mb-25'
+				className='mx-auto -mt-27 mb-25'
 				unoptimized={true}
 			/>
 		</div>

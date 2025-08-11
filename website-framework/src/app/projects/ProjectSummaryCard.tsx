@@ -22,7 +22,7 @@ export default function ProjectSummaryCard(project: Project) {
   return (
     <div className="flex justify-center px-4 sm:px-6 md:px-10 xl:px-[10vw] my-6">
       <div
-        className="w-full rounded-2xl border border-[var(--radial)] border-l-30 overflow-hidden shadow-2xl shadow-black/50">
+        className="w-full rounded-2xl border-[var(--radial)] border-l-30 overflow-hidden shadow-2xl shadow-black/50 hover:scale-103 hover:shadow-xl duration-200 cursor-pointer">
         <div
           className="relative bg-contain bg-center"
           style={{
@@ -57,10 +57,10 @@ export default function ProjectSummaryCard(project: Project) {
                 </a>
                 <a
                   href={project.repoLink}
-                  className="px-4 py-2 text-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded transition group"
+                  className={`px-4 py-2 text-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded transition ${ project.repoLink=="private" ? "dead-button" : "group" }`}
                   target={repotarg}
                 >
-                  <p className='pr-4'>GitHub Repo <span className='ml-1 group-hover:ml-2 transition-all duration-300 inline-block absolute'>→</span></p>
+                  <p className='pr-4'>{ project.repoLink=="private" ? "private repo :( " : "Repo Link" }<span className='ml-1 group-hover:ml-2 transition-all duration-300 inline-block absolute'>→</span></p>
                 </a>
               </div>
             </div>

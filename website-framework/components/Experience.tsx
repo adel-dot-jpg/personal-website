@@ -4,7 +4,7 @@ import ExperienceCard from './ExperienceCard'
 
 const Experience = () => {
   return (
-	<section id="experience">
+	<section id="experience" className='border-0 my-20'>
 		<h2>
 			Experience
 		</h2>
