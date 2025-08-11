@@ -36,7 +36,7 @@ const Hero = () => {
 				</h1>
 
 			<p className='pb-20 -mt-5 px-10 md:px-30 text-xl text-[var(--secondary)]'>
-				<code>I'm always ready to turn coffee, code, and curiosity into something amazing. <strong><span className='brightness-140'>Make me your intern superhero today!</span></strong></code>
+				<code>I&apos;m always ready to turn coffee, code, and curiosity into something amazing. <strong><span className='brightness-140'>Make me your intern superhero today!</span></strong></code>
 			</p>
 
 			<Image
