@@ -80,15 +80,15 @@ export const PROJECTS = [ /* shared among homepage projects section and projects
     repoLink: 'https://github.com/adel-dot-jpg/ASL_Translator', 
   },
   { 
-    title: 'Ubuntu Production Server', 
+    title: 'Production Server', 
     key: 'hosting', 
     description: 'Architected and deployed a self hosted Ubuntu Linux environment for running production-grade web applications. The infrastructure features Docker container orchestration, an Nginx reverse proxy, secure Cloudflare tunnels for HTTPS routing, and a fully automated CI/CD deployment pipeline using self-hosted GitHub Actions runners.', 
     technologies: 'Ubuntu Linux, Docker Compose, Nginx, Cloudflare Tunneling, GitHub Actions, CI/CD, Bash Scripting, DevOps', 
     status: 'Ongoing', 
     lastUpdate: 'April 2026', 
-    href: 'https://adel-dot-jpg.github.io/server-vitals/',  
+    href: '/projects',  
     bg: '/ServeSS.webp', 
-    projLink: 'https://adel-dot-jpg.github.io/server-vitals/', 
+    projLink: '/', 
     repoLink: 'private', 
   }
 ];
