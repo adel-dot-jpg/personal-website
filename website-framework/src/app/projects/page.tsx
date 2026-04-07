@@ -28,7 +28,7 @@ const page = () => {
 			</h1>
 
 			<p className='text-xl pl-10'>
-				Below are some cool things I made to keep me busy and have some fun
+				Below are some cool things I made to feed my curiosity and have some fun
 			</p>
 		</header>
 

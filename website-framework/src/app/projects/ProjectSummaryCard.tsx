@@ -50,7 +50,7 @@ export default function ProjectSummaryCard(project: Project) {
               <div className="flex flex-col gap-2 pt-2">
                 <a
                   href={project.projLink}
-                  className={`px-4 py-2 text-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded transition ${ project.status=="Completed" ? "group" : "dead-button" }`}
+                  className={`px-4 py-2 text-center text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded transition ${ project.status === "Completed" || project.status === "Ongoing" ? "group" : "dead-button" }`}
                   target={projtarg}
                 >
                   <p className='pr-4'>View Project <span className="ml-1 group-hover:ml-2 transition-all duration-300 inline-block absolute">→</span></p>
