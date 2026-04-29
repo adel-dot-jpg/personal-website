@@ -38,7 +38,8 @@ interface DisplayState {
   spo2: string;
   paco2: string;
   netStatus: string;
-  netRaw: string;
+  netRawMbps: string;
+  netRawb: string;
 }
 
 const CRITICAL_DISPLAY: DisplayState = {
@@ -52,7 +53,8 @@ const CRITICAL_DISPLAY: DisplayState = {
   spo2: 'ASPHYXIATED',
   paco2: 'TOXIC',
   netStatus: 'COMA',
-  netRaw: 'RX: 0 MB/s | TX: 0 MB/s',
+  netRawMbps: 'RX: 0 MB/s | TX: 0 MB/s',
+  netRawb: 'RX: 0 bytes recv | TX: 0 bytes sent',
 };
 
 export default function VitalsMonitor() {
@@ -95,7 +97,8 @@ export default function VitalsMonitor() {
           spo2: `${95 + Math.floor(Math.random() * 4)}%`,
           paco2: `${38 + Math.floor(Math.random() * 5)}`,
           netStatus: 'ACTIVE',
-          netRaw: `RX: ${data.network.mbps_recv.toFixed(4)} MB/s | TX: ${data.network.mbps_sent.toFixed(4)} MB/s`,
+          netRawMbps: `RX: ${data.network.mbps_recv.toFixed(6)} MB/s | TX: ${data.network.mbps_sent.toFixed(6)} MB/s`,
+          netRawb: `RX: ${data.network.bytes_recv.toFixed(6)} Bytes recv | TX: ${data.network.bytes_sent.toFixed(6)} Bytes sent`,
         });
       };
 
@@ -197,8 +200,8 @@ export default function VitalsMonitor() {
 
                 <div className="relative flex flex-1 items-center overflow-hidden border pl-5 transition-colors duration-300 min-h-[100px]" style={{ borderColor: darkTheme}}>
                   <div className="absolute top-2 text-xs uppercase opacity-80 md:text-sm">Network I/O</div>
-                    <div className="absolute top-8 text-xs font-bold md:text-3xl">{display.netStatus}</div>
-                  <div className="absolute bottom-2 text-xs opacity-80 md:text-base">{display.netRaw}</div>
+                    <div className="absolute top-8 text-sm font-bold md:text-xl">{display.netStatus}</div>
+                  <div className="absolute bottom-2 text-xs opacity-80 md:text-base">{display.netRawMbps}</div>
                 </div>
 
                 <div className="relative flex flex-1 items-center overflow-hidden border border-red-600 pl-5 min-h-[100px]">
