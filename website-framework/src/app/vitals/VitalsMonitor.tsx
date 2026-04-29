@@ -124,7 +124,7 @@ export default function VitalsMonitor() {
   const bgColor = isCritical ? '#050202' : '#050505';
 
   return (
-    <div className="mx-auto w-full max-w-6xl font-mono">
+    <div className="mx-auto w-full max-w-6xl" style={{ fontFamily: "Courier New" }}>
       <div className="rounded-3xl border-[16px] border-zinc-800 bg-zinc-900 p-4 shadow-2xl md:p-8">
         <div className="relative overflow-hidden rounded-xl border-8 border-black bg-black shadow-[inset_0_0_50px_rgba(0,0,0,1)] transition-colors duration-500"
           style={{
@@ -172,7 +172,7 @@ export default function VitalsMonitor() {
                 {isDockerOpen && (
                   <div className="max-h-40 overflow-y-auto text-xs md:text-sm border-1" style={{ borderColor: darkTheme, scrollbarWidth: 'thin', scrollbarColor: `${themeColor} #000000` }}>
                     <table className="w-full text-left">
-                      <thead className='b-1 b-red' style={{ backgroundColor: 'black', position: 'sticky', top: 0, zIndex: 1, border: 10, borderColor: 'red' }}>
+                      <thead className='b-1 b-red' style={{ backgroundColor: 'black', position: 'sticky', top: 0, zIndex: 1}}>
                         <tr>
                           <th className="p-1">Container</th>
                           <th className="p-1">Image</th>
@@ -195,18 +195,18 @@ export default function VitalsMonitor() {
                   </div>
                 )}
 
-                <div className="relative flex flex-1 items-center overflow-hidden border pl-5 transition-colors duration-300 min-h-[100px]" style={{ borderColor: darkTheme, backgroundColor: 'rgba(0,0,0,0.2)' }}>
-                  <div className="absolute top-2 text-xs uppercase opacity-80 md:text-sm">Brain Activity // Network I/O</div>
-                  <div className="absolute top-8 text-2xl font-bold md:text-3xl">{display.netStatus}</div>
+                <div className="relative flex flex-1 items-center overflow-hidden border pl-5 transition-colors duration-300 min-h-[100px]" style={{ borderColor: darkTheme}}>
+                  <div className="absolute top-2 text-xs uppercase opacity-80 md:text-sm">Network I/O</div>
+                    <div className="absolute top-8 text-xs font-bold md:text-3xl">{display.netStatus}</div>
                   <div className="absolute bottom-2 text-xs opacity-80 md:text-base">{display.netRaw}</div>
                 </div>
 
-                <div className="relative flex flex-1 items-center overflow-hidden border border-red-600 pl-5 min-h-[100px]" style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}>
+                <div className="relative flex flex-1 items-center overflow-hidden border border-red-600 pl-5 min-h-[100px]">
                   <div className="absolute top-2 text-xs uppercase text-red-600 opacity-80 md:text-sm">Cardiac Rhythm (BPM: 0)</div>
-                  <div className="absolute h-0.5 w-full bg-red-600 shadow-[0_0_10px_red]" />
-                  <div className="absolute right-5 animate-pulse text-xl font-bold text-red-600 drop-shadow-[0_0_5px_red] md:text-2xl">ASYSTOLE // FLATLINE</div>
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-0.5 w-[95%] bg-red-600 shadow-[0_0_10px_red]" />
+                      <div className="absolute top-2 right-2 animate-pulse text-xl font-bold text-red-600 md:text-xl">ASYSTOLE // FLATLINE</div>
+                  </div>
                 </div>
-              </div>
 
               <style dangerouslySetInnerHTML={{__html: `
                 @keyframes roll { 0% { top: -15%; } 100% { top: 110%; } }
