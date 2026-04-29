@@ -39,7 +39,8 @@ interface DisplayState {
   paco2: string;
   netStatus: string;
   netRawMbps: string;
-  netRawb: string;
+  bytesSent: number;
+  bytesRecv: number;
 }
 
 const CRITICAL_DISPLAY: DisplayState = {
@@ -54,7 +55,8 @@ const CRITICAL_DISPLAY: DisplayState = {
   paco2: 'TOXIC',
   netStatus: 'COMA',
   netRawMbps: 'RX: 0 MB/s | TX: 0 MB/s',
-  netRawb: 'RX: 0 bytes recv | TX: 0 bytes sent',
+  bytesSent: 0,
+  bytesRecv: 0,
 };
 
 export default function VitalsMonitor() {
@@ -98,7 +100,8 @@ export default function VitalsMonitor() {
           paco2: `${38 + Math.floor(Math.random() * 5)}`,
           netStatus: 'ACTIVE',
           netRawMbps: `RX: ${data.network.mbps_recv.toFixed(6)} MB/s | TX: ${data.network.mbps_sent.toFixed(6)} MB/s`,
-          netRawb: `RX: ${data.network.bytes_recv.toFixed(6)} Bytes recv | TX: ${data.network.bytes_sent.toFixed(6)} Bytes sent`,
+          bytesSent: data.network.bytes_sent,
+          bytesRecv: data.network.bytes_recv,
         });
       };
 
@@ -198,11 +201,15 @@ export default function VitalsMonitor() {
                   </div>
                 )}
 
-                <div className="relative flex flex-1 items-center overflow-hidden border pl-5 transition-colors duration-300 min-h-[100px]" style={{ borderColor: darkTheme}}>
-                  <div className="absolute top-2 text-xs uppercase opacity-80 md:text-sm">Network I/O</div>
-                    <div className="absolute top-8 text-sm font-bold md:text-xl">{display.netStatus}</div>
-                  <div className="absolute bottom-2 text-xs opacity-80 md:text-base">{display.netRawMbps}</div>
-                </div>
+                <NetworkGraph
+                  netStatus={display.netStatus}
+                  netRawMbps={display.netRawMbps}
+                  bytesSent={display.bytesSent}
+                  bytesRecv={display.bytesRecv}
+                  isCritical={isCritical}
+                  darkTheme={darkTheme}
+                  themeColor={themeColor}
+                />
 
                 <div className="relative flex flex-1 items-center overflow-hidden border border-red-600 pl-5 min-h-[100px]">
                   <div className="absolute top-2 text-xs uppercase text-red-600 opacity-80 md:text-sm">Cardiac Rhythm (BPM: 0)</div>
@@ -241,6 +248,114 @@ export default function VitalsMonitor() {
             PWR
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, isCritical, darkTheme, themeColor }: {
+  netStatus: string;
+  netRawMbps: string;
+  bytesSent: number;
+  bytesRecv: number;
+  isCritical: boolean;
+  darkTheme: string;
+  themeColor: string;
+}) {
+  const HISTORY = 10;
+  const sentHistory = useRef<number[]>(Array(HISTORY).fill(0));
+  const recvHistory = useRef<number[]>(Array(HISTORY).fill(0));
+
+  useEffect(() => {
+    sentHistory.current = [...sentHistory.current.slice(1), bytesSent];
+    recvHistory.current = [...recvHistory.current.slice(1), bytesRecv];
+  }, [bytesSent, bytesRecv]);
+
+  const allValues = [...sentHistory.current, ...recvHistory.current];
+  const maxVal = Math.max(...allValues, 0.0001);
+
+  const W = 500;
+  const H = 80;
+  const pad = 4;
+
+  const toPoints = (history: number[]) =>
+    history.map((v, i) => {
+      const x = pad + (i / (HISTORY - 1)) * (W - pad * 2);
+      const y = H - pad - (v / maxVal) * (H - pad * 2);
+      return `${x},${y}`;
+    }).join(' ');
+
+  const sentPoints = toPoints(sentHistory.current);
+  const recvPoints = toPoints(recvHistory.current);
+
+  return (
+    <div
+      className="relative flex flex-col overflow-hidden border pl-5 pr-5 pt-2 pb-2 transition-colors duration-300 min-h-[160px]"
+      style={{ borderColor: darkTheme, backgroundColor: 'rgba(0,0,0,0.2)' }}
+    >
+      <div className="flex justify-between items-center mb-1">
+        <div className="text-xs uppercase opacity-80">Network I/O</div>
+        <div className="text-xs font-bold">{netStatus}</div>
+      </div>
+
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="none"
+        className="w-full"
+        style={{ height: '90px' }}
+      >
+        {/* Grid lines */}
+        {[0.25, 0.5, 0.75].map((t) => (
+          <line
+            key={t}
+            x1={pad} y1={H - pad - t * (H - pad * 2)}
+            x2={W - pad} y2={H - pad - t * (H - pad * 2)}
+            stroke={darkTheme} strokeWidth="0.5"
+          />
+        ))}
+
+        {/* RX line — blue */}
+        <polyline
+          points={recvPoints}
+          fill="none"
+          stroke="#3b8eea"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        {/* RX fill */}
+        <polyline
+          points={`${pad},${H - pad} ${recvPoints} ${W - pad},${H - pad}`}
+          fill="rgba(59,142,234,0.15)"
+          stroke="none"
+        />
+
+        {/* TX line — red */}
+        <polyline
+          points={sentPoints}
+          fill="none"
+          stroke="#ff3b3b"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        {/* TX fill */}
+        <polyline
+          points={`${pad},${H - pad} ${sentPoints} ${W - pad},${H - pad}`}
+          fill="rgba(255,59,59,0.15)"
+          stroke="none"
+        />
+
+        {/* Max label */}
+        <text x={pad + 2} y={pad + 10} fill={themeColor} fontSize="8" opacity="0.6">
+          {maxVal} Bytes
+        </text>
+      </svg>
+
+      {/* Legend + live values */}
+      <div className="flex justify-between text-xs mt-1 opacity-90">
+        <span style={{ color: '#3b8eea' }}>▬ {netRawMbps.split('|')[0]}</span>
+        <span style={{ color: '#ff3b3b' }}>▬ {netRawMbps.split('|')[1]}</span>
       </div>
     </div>
   );
