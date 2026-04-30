@@ -51,7 +51,7 @@ const CRITICAL_DISPLAY: DisplayState = {
   diskRaw: '-- GB Free',
   dockerCount: 'GHOST TOWN',
   containerList: [],
-  spo2: 'ASPHYXIATED',
+  spo2: 'ASPHYX.',
   paco2: 'TOXIC',
   netStatus: 'COMA',
   netRawMbps: 'RX: 0 MB/s | TX: 0 MB/s',
@@ -134,12 +134,11 @@ export default function VitalsMonitor() {
       <div className="rounded-3xl border-[16px] border-zinc-800 bg-zinc-900 p-4 shadow-2xl md:p-8">
         <div className="relative overflow-hidden rounded-xl border-8 border-black bg-black shadow-[inset_0_0_50px_rgba(0,0,0,1)] transition-colors duration-500"
           style={{
-            minHeight: '850px',
             boxShadow: powerOn ? `inset 0 0 100px ${darkTheme}` : 'none'
           }}>
 
           {powerOn && (
-            <div className="absolute inset-0 selection:bg-red-500 selection:text-black"
+            <div className="relative selection:bg-red-500 selection:text-black opacity-100"
               style={{ color: themeColor }}>
 
               <div className="pointer-events-none absolute inset-0 z-10"
@@ -176,7 +175,7 @@ export default function VitalsMonitor() {
                 </div>
 
                 {isDockerOpen && (
-                  <div className="min-h-20 max-h-40 px-2 overflow-y-auto text-xs md:text-sm border-1 cursor-pointer" style={{ borderColor: darkTheme, scrollbarWidth: 'thin', scrollbarColor: `${themeColor} ${darkTheme}` }}>
+                  <div className="md:max-h-23 px-2 overflow-y-auto text-xs md:text-sm border-1 cursor-pointer" style={{ borderColor: darkTheme, scrollbarWidth: 'thin', scrollbarColor: `${themeColor} ${darkTheme}` }}>
                     <table className="w-full text-left">
                       <thead className='b-1' style={{ backgroundColor: 'black', position: 'sticky', top: 0, zIndex: 1}}>
                         <tr>
