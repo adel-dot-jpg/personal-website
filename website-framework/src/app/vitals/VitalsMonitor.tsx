@@ -113,7 +113,7 @@ export default function VitalsMonitor() {
       ws.onclose = () => {
         setIsCritical(true);
         setDisplay(CRITICAL_DISPLAY);
-        if (uplinkRef.current) setTimeout(connect, 3000); // ← ref, not uplinkActive
+        if (uplinkRef.current) setTimeout(connect, 3000); // <-- ref, not uplinkActive
       };
     };
 
@@ -134,13 +134,13 @@ export default function VitalsMonitor() {
       <div className="rounded-3xl border-[16px] border-zinc-800 bg-zinc-900 p-4 shadow-2xl md:p-8">
         <div className="relative overflow-hidden rounded-xl border-8 border-black bg-black shadow-[inset_0_0_50px_rgba(0,0,0,1)] transition-colors duration-500"
           style={{
-            minHeight: '750px',
+            minHeight: '850px',
             boxShadow: powerOn ? `inset 0 0 100px ${darkTheme}` : 'none'
           }}>
 
           {powerOn && (
             <div className="absolute inset-0 selection:bg-red-500 selection:text-black"
-              style={{ backgroundColor: bgColor, color: themeColor, textShadow: `0 0 5px ${themeColor}` }}>
+              style={{ color: themeColor }}>
 
               <div className="pointer-events-none absolute inset-0 z-10"
                 style={{
@@ -159,9 +159,9 @@ export default function VitalsMonitor() {
                 </header>
 
                 <div className="grid flex-2 grid-cols-1 gap-4 md:grid-cols-3">
-                  <VitalBox label="CPU Load" value={display.cpu} sub="Utilization" darkTheme={darkTheme} />
-                  <VitalBox label="Memory (RAM)" value={display.ram} sub={display.ramRaw} darkTheme={darkTheme} />
-                  <VitalBox label="Disk (SSD)" value={display.disk} sub={display.diskRaw} darkTheme={darkTheme} />
+                  <VitalBox label="CPU Load" value={display.cpu} sub="Utilization" darkTheme={darkTheme} themeColor={themeColor} />
+                  <VitalBox label="Memory (RAM)" value={display.ram} sub={display.ramRaw} darkTheme={darkTheme} themeColor={themeColor} />
+                  <VitalBox label="Disk (SSD)" value={display.disk} sub={display.diskRaw} darkTheme={darkTheme} themeColor={themeColor} />
 
                   <div className="relative flex flex-col justify-center border p-4 transition-colors duration-300 hover:bg-white/5" style={{ borderColor: darkTheme, backgroundColor: 'rgba(0,0,0,0.2)' }}>
                     <div className="mb-2 flex cursor-pointer justify-between text-sm uppercase opacity-80" onClick={() => setIsDockerOpen(!isDockerOpen)}>
@@ -171,14 +171,14 @@ export default function VitalsMonitor() {
                     <div className="mt-1 text-sm opacity-80 md:text-base">Active Containers</div>
                   </div>
 
-                  <VitalBox label="SpO2 (Sat)" value={display.spo2} sub="Peripheral Capillary O2" darkTheme={darkTheme} />
-                  <VitalBox label="PaCO2" value={display.paco2} sub="Arterial Carbon Dioxide" darkTheme={darkTheme} />
+                  <VitalBox label="SpO2 (Sat)" value={display.spo2} sub="Peripheral Capillary O2" darkTheme={darkTheme} themeColor={themeColor} />
+                  <VitalBox label="PaCO2" value={display.paco2} sub="Arterial Carbon Dioxide" darkTheme={darkTheme} themeColor={themeColor} />
                 </div>
 
                 {isDockerOpen && (
-                  <div className="max-h-40 overflow-y-auto text-xs md:text-sm border-1" style={{ borderColor: darkTheme, scrollbarWidth: 'thin', scrollbarColor: `${themeColor} #000000` }}>
+                  <div className="min-h-20 max-h-40 px-2 overflow-y-auto text-xs md:text-sm border-1 cursor-pointer" style={{ borderColor: darkTheme, scrollbarWidth: 'thin', scrollbarColor: `${themeColor} ${darkTheme}` }}>
                     <table className="w-full text-left">
-                      <thead className='b-1 b-red' style={{ backgroundColor: 'black', position: 'sticky', top: 0, zIndex: 1}}>
+                      <thead className='b-1' style={{ backgroundColor: 'black', position: 'sticky', top: 0, zIndex: 1}}>
                         <tr>
                           <th className="p-1">Container</th>
                           <th className="p-1">Image</th>
@@ -188,7 +188,7 @@ export default function VitalsMonitor() {
                       <tbody>
                         {display.containerList.length > 0
                           ? display.containerList.map((c, i) => (
-                            <tr key={i}>
+                            <tr key={i} className='bg-black hover:bg-[#031a03]'>
                               <td className="p-1">{c.name}</td>
                               <td className="p-1">{c.image}</td>
                               <td className="p-1">{c.status}</td>
@@ -212,9 +212,9 @@ export default function VitalsMonitor() {
                 />
 
                 <div className="relative flex flex-1 items-center overflow-hidden border border-red-600 pl-5 min-h-[100px]">
-                  <div className="absolute top-2 text-xs uppercase text-red-600 opacity-80 md:text-sm">Cardiac Rhythm (BPM: 0)</div>
+                  <div className="absolute top-2 text-xs uppercase text-red-900 md:text-lg" style={{ textShadow: '0 0 5px red' }}>Cardiac Rhythm (BPM: 0)</div>
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-0.5 w-[95%] bg-red-600 shadow-[0_0_10px_red]" />
-                      <div className="absolute top-2 right-2 animate-pulse text-xl font-bold text-red-600 md:text-xl">ASYSTOLE // FLATLINE</div>
+                      <div className="absolute top-2 right-2 animate-pulse text-xl font-bold text-red-600 md:text-xl" style={{ textShadow: '0 0 10px red' }}>ASYSTOLE // FLATLINE</div>
                   </div>
                 </div>
 
@@ -294,8 +294,8 @@ function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, isCritical,
       style={{ borderColor: darkTheme, backgroundColor: 'rgba(0,0,0,0.2)' }}
     >
       <div className="flex justify-between items-center mb-1">
-        <div className="text-xs uppercase opacity-80">Network I/O</div>
-        <div className="text-xs font-bold">{netStatus}</div>
+        <div className="text-xs uppercase opacity-80" style={{ textShadow: `0 0 5px ${themeColor}` }}>Network I/O</div>
+        <div className="text-xs font-bold" style={{ textShadow: '0 0 10px green' }}>{netStatus}</div>
       </div>
 
       <svg
@@ -314,7 +314,7 @@ function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, isCritical,
           />
         ))}
 
-        {/* RX line — blue */}
+        {/* RX line - blue */}
         <polyline
           points={recvPoints}
           fill="none"
@@ -330,7 +330,7 @@ function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, isCritical,
           stroke="none"
         />
 
-        {/* TX line — red */}
+        {/* TX line - red */}
         <polyline
           points={sentPoints}
           fill="none"
@@ -354,18 +354,18 @@ function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, isCritical,
 
       {/* Legend + live values */}
       <div className="flex justify-between text-xs mt-1 opacity-90">
-        <span style={{ color: '#3b8eea' }}>▬ {netRawMbps.split('|')[0]}</span>
-        <span style={{ color: '#ff3b3b' }}>▬ {netRawMbps.split('|')[1]}</span>
+        <span style={{ color: '#3b8eea', textShadow: '0 0 3px rgb(0,255,0)' }}>▬ {netRawMbps.split('|')[0]}</span>
+        <span style={{ color: '#ff3b3b', textShadow: '0 0 3px rgb(255,0,0)'  }}>▬ {netRawMbps.split('|')[1]}</span>
       </div>
     </div>
   );
 }
 
-function VitalBox({ label, value, sub, darkTheme }: { label: string; value: string; sub: string; darkTheme: string }) {
+function VitalBox({ label, value, sub, darkTheme, themeColor }: { label: string; value: string; sub: string; darkTheme: string; themeColor: string; }) {
   return (
     <div className="relative flex flex-col justify-center border p-4 transition-colors duration-300" style={{ borderColor: darkTheme, backgroundColor: 'rgba(0,0,0,0.2)' }}>
       <div className="mb-2 text-xs uppercase opacity-80 md:text-sm">{label}</div>
-      <div className="m-0 text-3xl font-bold md:text-4xl lg:text-5xl">{value}</div>
+      <div className="m-0 text-3xl font-bold md:text-4xl lg:text-5xl" style={{ textShadow: `0 0 5px ${themeColor}` }}>{value}</div>
       <div className="mt-1 text-xs opacity-80 md:text-base">{sub}</div>
     </div>
   );
