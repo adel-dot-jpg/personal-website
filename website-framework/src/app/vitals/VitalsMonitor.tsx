@@ -41,6 +41,8 @@ interface DisplayState {
   netRawMbps: string;
   bytesSent: number;
   bytesRecv: number;
+  MbpsSent: number;
+  MbpsRecv: number;
 }
 
 const CRITICAL_DISPLAY: DisplayState = {
@@ -57,6 +59,8 @@ const CRITICAL_DISPLAY: DisplayState = {
   netRawMbps: 'RX: 0 MB/s | TX: 0 MB/s',
   bytesSent: 0,
   bytesRecv: 0,
+  MbpsSent: 0,
+  MbpsRecv: 0,
 };
 
 export default function VitalsMonitor() {
@@ -92,6 +96,8 @@ export default function VitalsMonitor() {
           netRawMbps: `RX: ${data.network.mbps_recv.toFixed(6)} MB/s | TX: ${data.network.mbps_sent.toFixed(6)} MB/s`,
           bytesSent: data.network.bytes_sent,
           bytesRecv: data.network.bytes_recv,
+          MbpsSent: data.network.mbps_sent,
+          MbpsRecv: data.network.mbps_recv,
         });
       };
 
@@ -186,6 +192,8 @@ export default function VitalsMonitor() {
                 netRawMbps={display.netRawMbps}
                 bytesSent={display.bytesSent}
                 bytesRecv={display.bytesRecv}
+                MbpsSent={display.MbpsSent}
+                MbpsRecv={display.MbpsRecv}
                 isCritical={isCritical}
                 darkTheme={darkTheme}
                 themeColor={themeColor}
@@ -240,23 +248,25 @@ export default function VitalsMonitor() {
   );
 }
 
-function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, isCritical, darkTheme, themeColor }: {
+function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, MbpsSent, MbpsRecv, isCritical, darkTheme, themeColor }: {
   netStatus: string;
   netRawMbps: string;
   bytesSent: number;
   bytesRecv: number;
+  MbpsSent: number;
+  MbpsRecv: number;
   isCritical: boolean;
   darkTheme: string;
   themeColor: string;
 }) {
-  const HISTORY = 10;
+  const HISTORY = 30;
   const sentHistory = useRef<number[]>(Array(HISTORY).fill(0));
   const recvHistory = useRef<number[]>(Array(HISTORY).fill(0));
 
   useEffect(() => {
-    sentHistory.current = [...sentHistory.current.slice(1), bytesSent];
-    recvHistory.current = [...recvHistory.current.slice(1), bytesRecv];
-  }, [bytesSent, bytesRecv]);
+    sentHistory.current = [...sentHistory.current.slice(1), MbpsSent];
+    recvHistory.current = [...recvHistory.current.slice(1), MbpsRecv];
+  }, [MbpsSent, MbpsRecv]);
 
   const allValues = [...sentHistory.current, ...recvHistory.current];
   const maxVal = Math.max(...allValues, 0.0001);
@@ -293,7 +303,7 @@ function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, isCritical,
         <polyline points={`${pad},${H - pad} ${recvPoints} ${W - pad},${H - pad}`} fill="rgba(59,142,234,0.15)" stroke="none" />
         <polyline points={sentPoints} fill="none" stroke="#ff3b3b" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
         <polyline points={`${pad},${H - pad} ${sentPoints} ${W - pad},${H - pad}`} fill="rgba(255,59,59,0.15)" stroke="none" />
-        <text x={pad + 2} y={pad + 10} fill={themeColor} fontSize="8" opacity="0.6">{maxVal} Bytes</text>
+        <text x={pad + 2} y={pad + 10} fill={themeColor} fontSize="8" opacity="0.6">{bytesSent} Total Bytes Sent</text>
       </svg>
 
       <div className="flex justify-between text-xs mt-1 opacity-90">
