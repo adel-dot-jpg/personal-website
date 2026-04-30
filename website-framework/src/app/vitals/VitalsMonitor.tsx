@@ -215,24 +215,24 @@ export default function VitalsMonitor() {
                 setDisplay(CRITICAL_DISPLAY);
               }
             }}
-            className={`rounded px-6 py-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-4 active:border-b-0 active:translate-y-[4px] ${
+            className={`rounded-xl px-6 py-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-4 active:border-b-0 active:translate-y-[4px] ${
               uplinkActive
                 ? 'bg-zinc-700 text-zinc-300 border-zinc-950 hover:bg-zinc-600'
                 : 'bg-red-800 text-red-200 border-red-950 hover:bg-red-700'
             }`}
           >
-            {uplinkActive ? 'Uplink: ON' : 'Uplink: CUT'}
+            {uplinkActive ? 'ᯤ Uplink: ON' : '⚠ Uplink: CUT'}
           </button>
 
           <button
             onClick={() => setPowerOn(!powerOn)}
-            className={`rounded px-6 py-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-4 active:border-b-0 active:translate-y-[4px] ${
+            className={`rounded-full px-3 py-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-4 active:border-b-0 active:translate-y-[4px] ${
               powerOn
                 ? 'bg-emerald-700 text-emerald-100 border-emerald-950 hover:bg-emerald-600'
                 : 'bg-zinc-800 text-zinc-500 border-zinc-950 hover:bg-zinc-700'
             }`}
           >
-            PWR
+            ⏻
           </button>
         </div>
       </div>
