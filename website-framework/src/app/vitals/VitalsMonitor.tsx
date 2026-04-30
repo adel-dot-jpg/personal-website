@@ -137,8 +137,7 @@ export default function VitalsMonitor() {
             boxShadow: powerOn ? `inset 0 0 100px ${darkTheme}` : 'none'
           }}>
 
-          {powerOn && (
-            <div className="relative selection:bg-red-500 selection:text-black opacity-100"
+            <div className={`relative selection:bg-red-500 transition-opacity duration-300 ease-in-out selection:text-black ${powerOn ? 'opacity-100': 'opacity-0'}`}
               style={{ color: themeColor }}>
 
               <div className="pointer-events-none absolute inset-0 z-10"
@@ -221,7 +220,6 @@ export default function VitalsMonitor() {
                 @keyframes roll { 0% { top: -15%; } 100% { top: 110%; } }
               `}} />
             </div>
-          )}
         </div>
 
         <div className="mt-6 flex justify-end gap-4">
