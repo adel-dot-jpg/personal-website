@@ -191,10 +191,8 @@ export default function VitalsMonitor() {
                 netStatus={display.netStatus}
                 netRawMbps={display.netRawMbps}
                 bytesSent={display.bytesSent}
-                bytesRecv={display.bytesRecv}
                 MbpsSent={display.MbpsSent}
                 MbpsRecv={display.MbpsRecv}
-                isCritical={isCritical}
                 darkTheme={darkTheme}
                 themeColor={themeColor}
               />
@@ -248,14 +246,12 @@ export default function VitalsMonitor() {
   );
 }
 
-function NetworkGraph({ netStatus, netRawMbps, bytesSent, bytesRecv, MbpsSent, MbpsRecv, isCritical, darkTheme, themeColor }: {
+function NetworkGraph({ netStatus, netRawMbps, bytesSent, MbpsSent, MbpsRecv, darkTheme, themeColor }: {
   netStatus: string;
   netRawMbps: string;
   bytesSent: number;
-  bytesRecv: number;
   MbpsSent: number;
   MbpsRecv: number;
-  isCritical: boolean;
   darkTheme: string;
   themeColor: string;
 }) {

@@ -4,6 +4,7 @@ export const NAV_LINKS = [ /* for navbar/folding menu items */
 	{ href: '/', key: 'home', label: 'Home', },
 	{ href: '/projects', key: 'projects', label: 'Projects' },
 	{ href: '/#contact', key: 'contact', label: 'Contact' },
+  { href: '/vitals', key: 'vitals', label: 'Live Server' },
 ]
 
 export const PROJECTS = [ /* shared among homepage projects section and projects page */
@@ -90,6 +91,18 @@ export const PROJECTS = [ /* shared among homepage projects section and projects
     bg: '/ServeSS.webp', 
     projLink: '/', 
     repoLink: 'private', 
+  },
+  { 
+    title: 'Server Resources API', 
+    key: 'vitals', 
+    description: 'A live-service API run by my server via a websocket showcasing resource usage and accompanying dashboard to parse and beautifully display live server vitals written in Golang.', 
+    technologies: 'Ubuntu Linux, Docker Compose, Cloudflare Tunneling, Websockets, Golang, TailwindCSS, React.js', 
+    status: 'Completed', 
+    lastUpdate: 'April 2026', 
+    href: '/vitals',  
+    bg: '/GoApiSS.png', 
+    projLink: '/vitals', 
+    repoLink: 'https://github.com/adel-dot-jpg/go-vitals-api', 
   }
 ];
 
