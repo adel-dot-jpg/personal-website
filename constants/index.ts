@@ -123,7 +123,7 @@ export const PROJECTS = [
     title: "CedarKey AI",
     key: "cedarkey",
     description:
-      "A production SaaS platform for Canadian property managers and short-term rental hosts that generates legally compliant rental contracts using AI. Features a RAG-powered legal engine, e-signature pipeline with cryptographic audit trails, Stripe subscription billing and identity verification, security deposit escrow, smart lock integration via Seam, and iCal sync with Airbnb and VRBO.",
+      "A production SaaS platform for Canadian property managers and short-term rental hosts that generates jurisdiction-aware legally compliant rental contracts using AI. Features a RAG-powered legal engine, e-signature pipeline with cryptographic, PIPEDA compliant audit trails, Stripe subscription billing and identity verification, security deposit escrow, smart lock integration via Seam, and iCal sync with Airbnb and VRBO.",
     technologies:
       "Next.js, NestJS, tRPC, Prisma, PostgreSQL, pgvector, AWS S3, Stripe, Google Gemini, BullMQ, Upstash Redis, Puppeteer, Railway, Cloudflare",
     status: "Ongoing",
