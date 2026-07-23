@@ -1,5 +1,4 @@
 import React from 'react';
-// Note: Adjust this import path if you saved the component somewhere else!
 import VitalsMonitor from './VitalsMonitor';
 
 export const metadata = {

@@ -27,6 +27,14 @@ interface ApiResponse {
   containers: ContainerInfo[];
 }
 
+interface StatsResponse {
+  active_connections: number;
+  total_connections: number;
+  session_uptime_sec: number;
+  cumulative_uptime_sec: number;
+  uptime_percent: number;
+}
+
 interface DisplayState {
   cpu: string;
   ram: string;
@@ -63,12 +71,23 @@ const CRITICAL_DISPLAY: DisplayState = {
   MbpsRecv: 0,
 };
 
+function formatDuration(totalSeconds: number): string {
+  if (!totalSeconds || totalSeconds < 0) return '--';
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  if (days > 0) return `${days}d ${hours}h ${minutes}m`;
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}
+
 export default function VitalsMonitor() {
   const [powerOn, setPowerOn] = useState(true);
   const [uplinkActive, setUplinkActive] = useState(true);
   const [isCritical, setIsCritical] = useState(true);
   const [isDockerOpen, setIsDockerOpen] = useState(false);
   const [display, setDisplay] = useState<DisplayState>(CRITICAL_DISPLAY);
+  const [stats, setStats] = useState<StatsResponse | null>(null);
   const wsRef = useRef<WebSocket | null>(null);
   const uplinkRef = useRef(true);
 
@@ -114,6 +133,29 @@ export default function VitalsMonitor() {
     };
 
     connect();
+  }, []);
+
+  // Poll the /stats REST endpoint separately from the WebSocket stream
+  useEffect(() => {
+    let cancelled = false;
+
+    const pollStats = async () => {
+      try {
+        const res = await fetch('https://vitals.adelfaruque.me/stats');
+        if (!res.ok) throw new Error('stats fetch failed');
+        const data: StatsResponse = await res.json();
+        if (!cancelled) setStats(data);
+      } catch {
+        if (!cancelled) setStats(null);
+      }
+    };
+
+    pollStats();
+    const interval = setInterval(pollStats, 5000);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
   }, []);
 
   const themeColor = isCritical ? '#ff3b00' : '#0f0';
@@ -197,6 +239,8 @@ export default function VitalsMonitor() {
                 themeColor={themeColor}
               />
 
+              <SystemIntegrityPanel stats={stats} darkTheme={darkTheme} themeColor={themeColor} />
+
               <div className="relative flex flex-1 items-center overflow-hidden border border-red-600 pl-5 min-h-[100px]">
                 <div className="absolute top-2 text-xs uppercase text-red-900 md:text-lg" style={{ textShadow: '0 0 5px red' }}>Cardiac Rhythm (BPM: 0)</div>
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-0.5 w-[95%] bg-red-600 shadow-[0_0_10px_red]" />
@@ -240,6 +284,47 @@ export default function VitalsMonitor() {
           >
             ⏻
           </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SystemIntegrityPanel({ stats, darkTheme, themeColor }: {
+  stats: StatsResponse | null;
+  darkTheme: string;
+  themeColor: string;
+}) {
+  const uptimePct = stats ? stats.uptime_percent.toFixed(2) : '--';
+  const cumUptime = stats ? formatDuration(stats.cumulative_uptime_sec) : '--';
+  const sessUptime = stats ? formatDuration(stats.session_uptime_sec) : '--';
+  const active = stats ? stats.active_connections : '--';
+  const total = stats ? stats.total_connections : '--';
+
+  return (
+    <div
+      className="relative flex flex-col overflow-hidden border pl-5 pr-5 pt-3 pb-3 transition-colors duration-300"
+      style={{ borderColor: darkTheme, backgroundColor: 'rgba(0,0,0,0.2)' }}
+    >
+      <div className="mb-2 text-xs uppercase opacity-80" style={{ textShadow: `0 0 5px ${themeColor}` }}>
+        System Integrity
+      </div>
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div>
+          <div className="text-2xl font-bold md:text-3xl" style={{ textShadow: `0 0 5px ${themeColor}` }}>{uptimePct}%</div>
+          <div className="text-xs opacity-70">Lifetime Uptime</div>
+        </div>
+        <div>
+          <div className="text-2xl font-bold md:text-3xl" style={{ textShadow: `0 0 5px ${themeColor}` }}>{cumUptime}</div>
+          <div className="text-xs opacity-70">Total Runtime</div>
+        </div>
+        <div>
+          <div className="text-2xl font-bold md:text-3xl" style={{ textShadow: `0 0 5px ${themeColor}` }}>{sessUptime}</div>
+          <div className="text-xs opacity-70">Current Session</div>
+        </div>
+        <div>
+          <div className="text-2xl font-bold md:text-3xl" style={{ textShadow: `0 0 5px ${themeColor}` }}>{active} / {total}</div>
+          <div className="text-xs opacity-70">Active / Total Links</div>
         </div>
       </div>
     </div>
