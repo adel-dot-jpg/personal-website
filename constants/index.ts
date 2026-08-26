@@ -135,14 +135,26 @@ export const PROJECTS = [
   },
 ];
 
-export const EXPERIENCES = [
-  /* experience section of homepage */
+export const EDUCATION = [
+  /* education section of homepage */
   {
     place: "Toronto Metropolitan University",
     key: "TMU",
-    title: "Computer Engineering, B.Eng",
+    title: "Computer Engineering, B.Eng (Software Stream)",
     date: "April 2027",
     icon: "/tmu.jpg",
+  },
+];
+
+export const EXPERIENCES = [
+  /* experience section of homepage */
+  {
+    place: "ReInvestWealth",
+    key: "RIW",
+    title: "SDE Intern: AI Infrastructure",
+    date: "From August 2026",
+    icon: "/reinvestwealth_logo.jpg",
+    color: "#ffffff",
   },
 ];
 

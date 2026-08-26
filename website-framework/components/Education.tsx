@@ -1,23 +1,22 @@
 import React from 'react'
-import { EXPERIENCES } from '../../constants'
+import { EDUCATION } from '../../constants'
 import EECard from './EECard'
 
-const Experience = () => {
+const EE = () => {
   return (
-	<section id="experience" className='border-0 my-20'>
+	<section id="EE" className='border-0 my-20'>
 		<h2>
-			Experience
+			Education
 		</h2>
 
 		<div className='p-4'>
-			{EXPERIENCES.map((exp) => (
+			{EDUCATION.map((exp) => (
 				<EECard
 					place={exp.place}
 					title={exp.title}
 					date={exp.date}
 					icon={exp.icon}
 					key={exp.key}
-					color={exp?.color}
 				/>
 			))}
 		</div>
@@ -25,4 +24,4 @@ const Experience = () => {
   )
 }
 
-export default Experience
+export default EE

@@ -1,18 +1,23 @@
 import Image from 'next/image'
 
-type ExperienceCardProps = {
+type EECardProps = {
 	place: string;
 	title: string;
 	date: string;
 	icon: string;
+	color?: string;
 };
 
-const ExperienceCard = ( {place, title, date, icon}: ExperienceCardProps ) => {
+const EECard = ({ place, title, date, icon, color = '#172554' }: EECardProps) => {
+	// Education-Experience Card
   return (
 	<>
 		<div className='flex flex-row justify-between items-center max-w-[600px] mx-auto my-7 bg-gradient-to-r from-transparent via-[var(--linear)] to-transparent'>
 			<div className='flex flex-row items-center'>
-				<div className='rounded-md bg-blue-950 w-17 h-17 content-center hover:brightness-120 duration-300 mr-3.5'>
+				<div
+					className='rounded-md w-17 h-17 content-center hover:brightness-120 duration-300 mr-3.5'
+					style={{ backgroundColor: color }}
+				>
 					<Image
 						src={icon}
 						alt={`${title} icon`}
@@ -35,4 +40,4 @@ const ExperienceCard = ( {place, title, date, icon}: ExperienceCardProps ) => {
   )
 }
 
-export default ExperienceCard
+export default EECard
