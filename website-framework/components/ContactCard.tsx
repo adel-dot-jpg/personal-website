@@ -27,7 +27,7 @@ const ContactCard = ( {platform, icon, href}: ContactCardProps ) => {
 						/>
 					</div>
 					<div>
-						<span className='font-bold text-lg'>{platform}
+						<span className='text-lg text-white'>{platform}
 							<Image src='/open.svg' alt='open in new tab' height={25} width={25} className='inline ml-1 -mt-1' />
 						</span><br/>
 					</div>

@@ -30,10 +30,10 @@ const EECard = ({ place, title, date, icon, color = '#172554' }: EECardProps) =>
 				</div>
 				<div>
 					<span className='font-bold lg:text-lg'>{place}</span><br/>
-					<span className='text-[var(--secondary)] text-sm lg:text-md'>{title}</span>
+					<span className='text-[var(--secondary)] brightness-150 text-sm lg:text-lg'>{title}</span>
 				</div>
 			</div>
-			<div className='text-[var(--secondary)] brightness-150 text-sm lg:text-md'>
+			<div className='text-[var(--secondary)] brightness-120 text-sm lg:text-md'>
 				{date}
 			</div>
 		</div>

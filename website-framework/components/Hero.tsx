@@ -10,7 +10,7 @@ const Hero = () => {
 			alt='Adel Faruque'
 			height={1000}
 			width={1000}
-			className='px-5 lg:pl-20 select-none mb-5'
+			className='px-5 lg:pl-20 select-none'
 			draggable={false}
 		/>
 
@@ -26,8 +26,8 @@ const Hero = () => {
 		/>
 
 		<div>
-				<h1 className='text-lg pb-5 px-10 md:pt-10 md:px-20 md:text-xl max-w-[1100px] font-bold'>
-					Well hello there! I&apos;m an eager 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and AI infra experience. I live in the in-between area where art meets technology.
+				<h1 className='text-md pt-10 lg:pt-0 pb-5 px-10 lg:pt-10 lg:px-20 lg:text-xl max-w-[1100px] font-bold'>
+					Hello there! I&apos;m an eager 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and AI infra experience. I live in the in-between area where art meets technology.
 					<br/>You can reach me at:
 					<div className='text-nowrap flex flex-row align-middle'>
 						<span className='text-[var(--secondary)] pr-1 brightness-200'>AdelFaruque1@gmail.com</span>

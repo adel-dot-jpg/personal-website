@@ -31,7 +31,7 @@ const ToggleMenu = () => {
 		<ul className={`${menuOpen ? " animate-slide-down " : " animate-slide-up "} ${startRef.current ? " block " : " hidden "} lg:hidden absolute top-0 z-100 left-0 w-full bg-gradient-to-b from-[var(--secondary)] via-[var(--secondary)] to-[var(--radial)] text-[var(--foreground)] text-3xl overflow-clip`}>
 			{NAV_LINKS.map((link) => (
 			<TransitionLink href={link.href} scroll={true} key={link.key}>
-				<li onClick={foldableMenu} className="border-1 border-white/30 py-4 opacity-50 text-center hover:text-indigo-300 hover:bg-indigo-950 active:brightness-75 transition-colors duration-100">
+				<li onClick={foldableMenu} className="border-1 border-white/30 py-4 opacity-50 text-center active:text-indigo-950 active:bg-indigo-400 transition-colors duration-100">
 					{link.label}
 				</li>
 			</TransitionLink>
@@ -40,7 +40,7 @@ const ToggleMenu = () => {
 
 		{menuOpen && (
 			<div
-				className="bg-black/80 -z-50 absolute left-0 top-0 w-[100vw] h-[100vh]"
+				className="bg-black/80 -z-50 absolute left-0 top-0 w-[100vw] h-[100vh] mt-0"
 				onClick={foldableMenu}
 			/>
 		)}
