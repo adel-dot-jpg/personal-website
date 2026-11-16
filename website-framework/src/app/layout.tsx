@@ -19,7 +19,7 @@ const bodyFont = DM_Sans ({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://AdelFaruque.me"),
-  title: "Adel Faruque — Art Meets Technology",
+  title: "Adel Faruque — Art + Technology",
   description: "A showcase of full-stack development projects, design work, and technical experiments by Adel Faruque.",
   keywords: [
     "Adel Faruque",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   creator: "Adel Faruque",
   openGraph: {
-    title: "Adel Faruque — Art Meets Technology",
+    title: "Adel Faruque - Art Meets Technology",
     description: "Hi! I'm Adel Faruque, a curious full-stack developer. Explore my projects, experiments, and qualifications on my handcrafted, beautifully designed personal portfolio site- featuring my favorite colour, purple!.",
     url: "https://adelfaruque.me",
     siteName: "Adel Faruque",

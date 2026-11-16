@@ -22,13 +22,13 @@ const page = () => {
 			className='absolute -z-10 left-100 top-150'
 		/>
 
-		<header>
+		<header className='lg:w-[50vw] text-center'>
 			<h1 className='text-3xl font-bold my-5 p-5 text-[var(--secondary)] brightness-150'>
 				Personal Projects Reference List
 			</h1>
 
 			<p className='text-xl pl-10'>
-				Below are some cool things I made to feed my curiosity and have some fun
+				Below are some cool things I made.
 			</p>
 		</header>
 

@@ -16,9 +16,9 @@ export default function ThemeToggle() {
 
   return (
     <div className='hover:scale-108 duration-150'>
-      <button onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')} className='lg:text-xl border-1 border-[var(--radial)] rounded-md py-2 px-5 ml-0 hover:bg-[var(--linear)] transition-colors duration-150 text-gray-100 cursor-pointer border-b-4 active:border-b-1'>
-        <Image src={currentTheme === 'dark' ? 'moon.svg' : 'sun.svg'} alt="resume icon" width={25} height={30} className="inline-block mr-3 -ml-1 mb-1" draggable={false}/>
-        Switch to {currentTheme === 'dark' ? 'light' : 'dark'} mode
+      <button onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')} className='lg:text-xl border-1 border-[var(--radial)] rounded-md py-2 px-4 lg:px-5 ml-0 hover:bg-[var(--linear)] transition-colors duration-150 text-gray-100 cursor-pointer border-b-4 active:border-b-1'>
+        <Image src={currentTheme === 'dark' ? 'moon.svg' : 'sun.svg'} alt="resume icon" width={25} height={30} className="inline-block lg:mr-3 pb-1 pt-0.5 lg:pb-0 lg:pt-0 lg:-ml-1 lg:mb-1 opacity-30" draggable={false}/>
+        <span className='hidden lg:inline-block opacity-30'>Switch to {currentTheme === 'dark' ? 'light' : 'dark'} mode</span>
       </button>
     </div>
   );

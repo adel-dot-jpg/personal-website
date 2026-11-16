@@ -10,7 +10,7 @@ const Hero = () => {
 			alt='Adel Faruque'
 			height={1000}
 			width={1000}
-			className='pl-20 pt-10 pr-5 select-none'
+			className='pl-5 lg:pl-20 select-none'
 			draggable={false}
 		/>
 
@@ -26,8 +26,8 @@ const Hero = () => {
 		/>
 
 		<div>
-				<h1 className='text-lg pb-5 px-10 md:pb-10 md:pt-10 md:px-30 md:text-xl max-w-[1100px] font-bold'>
-					Well hello there! I&apos;m an eager 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and infrastructure experience. I live in the in-between area where art meets technology.
+				<h1 className='text-lg pb-5 px-10 md:pt-10 md:px-20 md:text-xl max-w-[1100px] font-bold'>
+					Well hello there! I&apos;m an eager 3rd-year computer engineering student based in <strong className='brightness-150'>Toronto, ON</strong> with full-stack and AI infra experience. I live in the in-between area where art meets technology.
 					<br/>You can reach me at:
 					<div className='text-nowrap flex flex-row align-middle'>
 						<span className='text-[var(--secondary)] pr-1 brightness-200'>AdelFaruque1@gmail.com</span>
@@ -35,16 +35,16 @@ const Hero = () => {
 					</div>
 				</h1>
 
-			<p className='pb-20 -mt-5 px-10 md:px-30 text-xl text-[var(--secondary)]'>
-				<code>I&apos;m always ready to turn coffee, code, and curiosity into something amazing. <strong><span className='brightness-140'>Make me your intern superhero today!</span></strong></code>
+			<p className='pb-20 -mt-5 px-10 md:px-20 text-xl text-[var(--primary)]'>
+				<code>I&apos;m always game to slam a Bang Energy&copy; and bring an idea to reality.</code>
 			</p>
 
 			<Image
 				src='/scroll-down.gif'
 				alt='scroll down arrow'
-				height={100}
-				width={100}
-				className='mx-auto -mt-27 mb-25'
+				height={70}
+				width={70}
+				className='hidden lg:block mx-auto -mt-24 mb-25 opacity-30'
 				unoptimized={true}
 			/>
 		</div>

@@ -10,20 +10,6 @@ export const NAV_LINKS = [
 export const PROJECTS = [
   /* shared among homepage projects section and projects page */
   {
-    title: "Portfolio Website",
-    key: "personal-website",
-    description:
-      "A fully responsive personal website built with a mobile-first approach, emphasizing modular component architecture, semantic HTML, and Tailwind CSS utility patterns to ensure maximum code reusability, performance, and maintainability across devices",
-    technologies:
-      "React, Next.js, TypeScript, TailwindCSS, UI/UX, SEO, GitHub Actions",
-    status: "Completed",
-    lastUpdate: "July 2025",
-    href: "/projects",
-    bg: "/PWss.jpg",
-    projLink: "/",
-    repoLink: "https://github.com/adel-dot-jpg/personal-website",
-  },
-  {
     title: "Moon Tracker",
     key: "moon-phase",
     description:
@@ -120,7 +106,7 @@ export const PROJECTS = [
     repoLink: "https://github.com/adel-dot-jpg/go-vitals-api",
   },
   {
-    title: "CedarKey AI",
+    title: "CedarKey",
     key: "cedarkey",
     description:
       "A production SaaS platform for Canadian property managers and short-term rental hosts that generates jurisdiction-aware legally compliant rental contracts using AI. Features a RAG-powered legal engine, e-signature pipeline with cryptographic, PIPEDA compliant audit trails, Stripe subscription billing and identity verification, security deposit escrow, smart lock integration via Seam, and iCal sync with Airbnb and VRBO.",
@@ -132,6 +118,20 @@ export const PROJECTS = [
     bg: "/CedarKeySS.png",
     projLink: "https://cedarkey.ca",
     repoLink: "https://github.com/adel-dot-jpg/clauseforge",
+  },
+  {
+    title: "Founder(ish)",
+    key: "larphacks",
+    description:
+      "An AI cofounder for the business side for engineers who built something awesome and don't know how to sell it. It reads your repo, finds people who can open doors and people who might use what you built, and drafts founder-style outreach for you. It never claims anything it can't back with a receipt from it's table of truth",
+    technologies:
+      "React, Next.js, TypeScript, TailwindCSS, PostgreSQL, Drizzle ORM, Apollo.io, Gemini, Agentboxd",
+    status: "Completed",
+    lastUpdate: "October 2026",
+    href: "/projects",
+    bg: "/FounderishSS.png",
+    projLink: "/",
+    repoLink: "https://github.com/adel-dot-jpg/founderish",
   },
 ];
 
@@ -151,9 +151,9 @@ export const EXPERIENCES = [
   {
     place: "ReInvestWealth",
     key: "RIW",
-    title: "SDE Intern: AI Infrastructure",
+    title: "SDE Intern: Full-Stack and AI",
     date: "From August 2026",
-    icon: "/reinvestwealth_logo.jpg",
+    icon: "/reinvestwealth_logo.webp",
     color: "#ffffff",
   },
 ];

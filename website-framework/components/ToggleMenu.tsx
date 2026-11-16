@@ -14,33 +14,35 @@ const ToggleMenu = () => {
 	const foldableMenu = () => { /* for menu state toggling */
 		startRef.current = true;
 		setMenuOpen((prev) => !prev);
+		if (menuOpen == false) {
+			document.body.classList.add('overflow-hidden');
+		} else {
+			document.body.classList.remove('overflow-hidden');
+		}
 	};
-
-
   
   return (
 	<>
 		<Image
 			src={"/menu.svg"} alt="menu icon" height={25} width={45}
-			className="lg:hidden cursor-pointer brightness-75 active:brightness-50 z-50"
+			className="lg:hidden cursor-pointer brightness-50 active:brightness-50 z-50"
 			onClick={foldableMenu}
 		/>
-		<div>
-			<ul className={`${menuOpen ? " animate-slide-down " : " animate-slide-up "} ${startRef.current ? " block " : " hidden "} lg:hidden absolute top-[100%] left-0 w-full bg-[var(--secondary)] text-white text-4xl overflow-clip`}>
-				{NAV_LINKS.map((link) => (
-				<TransitionLink href={link.href} scroll={true} key={link.key}>
-					<li onClick={() => setMenuOpen(false)} className=" border-1 border-black py-4 text-center font-bold hover:text-indigo-300 hover:bg-indigo-950 active:brightness-75 transition-colors duration-100">
-						{link.label}
-					</li>
-				</TransitionLink>
-				))}
-			</ul>
-		</div>
+		
+		<ul className={`${menuOpen ? " animate-slide-down " : " animate-slide-up "} ${startRef.current ? " block " : " hidden "} lg:hidden absolute top-[100%] left-0 w-full bg-[var(--secondary)] text-white text-4xl border border-blue-500 overflow-clip`}>
+			{NAV_LINKS.map((link) => (
+			<TransitionLink href={link.href} scroll={true} key={link.key}>
+				<li onClick={foldableMenu} className=" border-1 border-black py-4 text-center font-bold hover:text-indigo-300 hover:bg-indigo-950 active:brightness-75 transition-colors duration-100">
+					{link.label}
+				</li>
+			</TransitionLink>
+			))}
+		</ul>
 
 		{menuOpen && (
 			<div
-				className="bg-black/60 -z-50 absolute left-0 top-0 w-[100vw] h-[100vh]"
-				onClick={() => setMenuOpen(false)}
+				className="bg-black/60 -z-50 absolute left-0 top-0 w-[100vw] h-[100vh] border border-red-500"
+				onClick={foldableMenu}
 			/>
 		)}
 	</>
