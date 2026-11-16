@@ -16,9 +16,9 @@
 .light {
   --background: #7c6699;
   --foreground: #ffffff;
-  --secondary: #dcabef;
-  --radial: #f19fff;
-  --linear: #8c75ab;
+  --secondary: #9778a3;
+  --radial: #a871b2;
+  --linear: #705d88;
 }
 
 @theme inline {
@@ -38,13 +38,14 @@ body {
 h2 {
   font-size: 3rem;
   font-weight: 600;
-  padding: 0 5.5rem;
+  text-align: center;
   margin-top: 7vh;
 }
 
 @media (width >= 64rem) {
   h2 {
     padding: 0 15rem;
+    text-align: initial;
   }
 }
 

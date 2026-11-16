@@ -14,9 +14,9 @@ type FakeTerminalProps = {
 
 export default function FakeTerminal({ title, description, technologies, status, updated, href }: FakeTerminalProps) {
   return (
-    <div className='flex border-0 border-red-500'>
-    <div className='w-full sm:max-w-[620px] rounded-sm border border-gray-700 bg-black shadow-2xl my-10 mx-auto'>
-      <div className='bg-zinc-800 text-white flex px-3 text-sm font-medium border-0 border-green-500'>
+    <div className='flex'>
+    <div className='w-full sm:max-w-[620px] rounded-sm border border-gray-700 bg-black shadow-2xl my-10 mx-auto overflow-hidden'>
+      <div className='bg-zinc-800 text-white flex px-3 text-sm font-medium'>
         <div className='bg-black px-2 py-1 mt-3 rounded-t-md min-w-50'>
           <Image
             src={'/cmd.png'}
@@ -29,7 +29,7 @@ export default function FakeTerminal({ title, description, technologies, status,
           Command Prompt
           <Image src={'/terminalCLOSE.svg'} alt='terminal close icon' height={15} width={15} className='hover:bg-gray-700 inline-block ml-[26px]' draggable={false} />
         </div>
-        <Image src={'/terminalCLOSE.svg'} alt='terminal close icon' height={15} width={15} className='brightness-40 ml-2 mt-3 rotate-45 border-0 border-orange-500' draggable={false} />
+        <Image src={'/terminalCLOSE.svg'} alt='terminal close icon' height={15} width={15} className='brightness-40 ml-2 mt-3 rotate-45' draggable={false} />
         <div className='flex w-2xl flex-row-reverse items-center'>
           <Image src={'/terminalCLOSE.svg'} alt='terminal close icon' height={18} width={18} className='hover:bg-red-500' draggable={false} />
           <Image src={'/terminalMAX.svg'} alt='terminal maximize icon' height={18} width={18} className='mx-3 hover:bg-gray-700' draggable={false} />
@@ -37,7 +37,7 @@ export default function FakeTerminal({ title, description, technologies, status,
         </div>
       </div>
 
-      <div className='font-[Consolas] p-4 min-h-80 flex flex-col border-0 border-blue-500'>
+      <div className='font-[Consolas] p-4 min-h-80 flex flex-col'>
         <p>
           <span className='text-gray-700 text-sm'>Microsoft Windows [Version 10.0.26100.3476]
           <br/>(c) Microsoft Corporation. All rights reserved.

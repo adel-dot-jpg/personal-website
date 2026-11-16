@@ -10,7 +10,7 @@ const Hero = () => {
 			alt='Adel Faruque'
 			height={1000}
 			width={1000}
-			className='pl-5 lg:pl-20 select-none'
+			className='px-5 lg:pl-20 select-none mb-5'
 			draggable={false}
 		/>
 

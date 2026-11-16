@@ -15,7 +15,7 @@ const EECard = ({ place, title, date, icon, color = '#172554' }: EECardProps) =>
 		<div className='flex flex-row justify-between items-center max-w-[600px] mx-auto my-7 bg-gradient-to-r from-transparent via-[var(--linear)] to-transparent'>
 			<div className='flex flex-row items-center'>
 				<div
-					className='rounded-md w-17 h-17 content-center hover:brightness-120 duration-300 mr-3.5'
+					className='rounded-md min-w-17 min-h-17 content-center hover:brightness-120 duration-300 mr-3.5 cursor-pointer'
 					style={{ backgroundColor: color }}
 				>
 					<Image
@@ -26,13 +26,14 @@ const EECard = ({ place, title, date, icon, color = '#172554' }: EECardProps) =>
 						className='m-auto'
 						draggable={false}
 					/>
+
 				</div>
 				<div>
-					<span className='font-bold text-lg'>{place}</span><br/>
-					<span className='text-[var(--secondary)]'>{title}</span>
+					<span className='font-bold lg:text-lg'>{place}</span><br/>
+					<span className='text-[var(--secondary)] text-sm lg:text-md'>{title}</span>
 				</div>
 			</div>
-			<div className='text-[var(--secondary)] brightness-150 border-0 border-indigo-500 m-4'>
+			<div className='text-[var(--secondary)] brightness-150 text-sm lg:text-md'>
 				{date}
 			</div>
 		</div>

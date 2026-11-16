@@ -23,16 +23,16 @@ const ToggleMenu = () => {
   
   return (
 	<>
-		<Image
-			src={"/menu.svg"} alt="menu icon" height={25} width={45}
-			className="lg:hidden cursor-pointer brightness-50 active:brightness-50 z-50"
+		<div 
+  			className="size-10 bg-[var(--radial)] mask-[url('/menu.svg')] mask-contain mask-no-repeat mask-center lg:hidden cursor-pointer active:brightness-150 z-50"
 			onClick={foldableMenu}
-		/>
+		>
+		</div>
 		
-		<ul className={`${menuOpen ? " animate-slide-down " : " animate-slide-up "} ${startRef.current ? " block " : " hidden "} lg:hidden absolute top-0 z-100 left-0 w-full bg-gradient-to-b from-[var(--secondary)] via-[var(--secondary)] to-[var(--radial)] text-white text-3xl overflow-clip`}>
+		<ul className={`${menuOpen ? " animate-slide-down " : " animate-slide-up "} ${startRef.current ? " block " : " hidden "} lg:hidden absolute top-0 z-100 left-0 w-full bg-gradient-to-b from-[var(--secondary)] via-[var(--secondary)] to-[var(--radial)] text-[var(--foreground)] text-3xl overflow-clip`}>
 			{NAV_LINKS.map((link) => (
 			<TransitionLink href={link.href} scroll={true} key={link.key}>
-				<li onClick={foldableMenu} className="border-1 border-white/30 py-4 opacity-30 text-center hover:text-indigo-300 hover:bg-indigo-950 active:brightness-75 transition-colors duration-100">
+				<li onClick={foldableMenu} className="border-1 border-white/30 py-4 opacity-50 text-center hover:text-indigo-300 hover:bg-indigo-950 active:brightness-75 transition-colors duration-100">
 					{link.label}
 				</li>
 			</TransitionLink>

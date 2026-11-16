@@ -16,7 +16,7 @@ const Projects = () => {
   return (
     <section id="projects">
       <h2>A tasting of my work</h2>
-      <div className="flex justify-around flex-col xl:flex-row bg-[radial-gradient(closest-side_at_50%_50%,_var(--radial),_transparent)] border-0 border-red-500 overflow-auto gap-10 px-10">
+      <div className="flex justify-around flex-col xl:flex-row bg-[radial-gradient(closest-side_at_50%_50%,_var(--radial),_transparent)] overflow-auto lg:gap-10 lg:px-10">
         {shuffled.map((proj) => (
           <FakeTerminal
             title={proj.title}
