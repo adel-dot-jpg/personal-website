@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
   <nav className="z-30 p-5 flex justify-end pr-7 relative items-center select-none mb-10">
     <div className="flex gap-3 lg:gap-10 absolute left-0 left-5 lg:left-10 items-center">
-      <Link href="\adel_resume_october_2026.pdf" className="cursor-pointer active:brightness-75 select-none hover:scale-108 duration-150" draggable={false}>
+      <Link href="\adel_resume_november_2026.pdf" className="cursor-pointer active:brightness-75 select-none hover:scale-108 duration-150" draggable={false}>
         <div className="lg:text-xl border-1 border-[var(--radial)] rounded-md py-2 px-4 lg:px-5 ml-0 hover:bg-[var(--linear)] transition-colors duration-150 text-gray-100 border-b-4 active:border-b-1 lg:mt-3">
           <Image src={"/resume.svg"} alt="resume icon" width={30} height={30} className="inline-block lg:mr-1 lg:-ml-1 lg:-mt-0.5 opacity-30" draggable={false}/>
           <span className="hidden lg:inline-block align-middle opacity-30">Resume</span>
