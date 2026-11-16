@@ -1,6 +1,5 @@
 "use client"
 import { NAV_LINKS } from "../../constants"
-import Image from "next/image"
 import { useState } from "react"
 import { useRef } from "react"
 import TransitionLink from "./TransitionLink"
