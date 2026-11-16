@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import CopyTooltip from './CopyTooltip';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -36,7 +37,12 @@ const Hero = () => {
 				</h1>
 
 			<p className='pb-20 -mt-5 px-10 md:px-20 text-xl text-[var(--primary)]'>
-				<code>I&apos;m always game to slam a Bang Energy&copy; and bring an idea to reality.</code>
+				<code className='bg-black/90'>I&apos;m always game to slam a&nbsp;
+					<Link href={'/energydrinks'} className='underline text-red-500 brightness-150'>
+						Bang Energy&copy;
+					</Link>
+					&nbsp;and bring an idea to reality.
+				</code>
 			</p>
 
 			<Image

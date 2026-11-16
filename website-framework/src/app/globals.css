@@ -14,11 +14,11 @@
 }
 
 .light {
-  --background: #7c6699;
+  --background: #71529c;
   --foreground: #ffffff;
-  --secondary: #9778a3;
+  --secondary: #c2a4ce;
   --radial: #a871b2;
-  --linear: #705d88;
+  --linear: #b898df;
 }
 
 @theme inline {

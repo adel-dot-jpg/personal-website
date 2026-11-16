@@ -17,12 +17,12 @@ export default function CopyButton() {
   };
 
   return (
-    <div className="inline-block relative mx-2 -mt-1 group text-sm">
+    <div className="inline-block relative lg:mx-2 -mt-1 group text-sm select-none scale-90 lg:scale-100">
 	{/* Button */}	
       <button
         onClick={handleCopy}
-        className='px-2 py-1 font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700 active:bg-indigo-900'>
-        <Image src='copy.svg' alt="copy to clipboard" height={25} width={25} />
+        className='px-2 py-1 font-medium text-white bg-[var(--secondary)] rounded hover:brightness-130 active:brightness-60'>
+        <Image src='copy.svg' alt="copy to clipboard" height={25} width={25}/>
       </button>
 
       {/* Tooltip */}
