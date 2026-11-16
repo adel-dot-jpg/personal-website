@@ -20,9 +20,9 @@ export default function ProjectSummaryCard(project: Project) {
   const repotarg = isHome ? undefined : '_blank';
 
   return (
-    <div className="flex justify-center px-4 sm:px-6 md:px-10 xl:px-[10vw] my-6">
+    <div className="flex justify-center px-4 sm:px-6 md:px-10 xl:px-[5vw] my-6">
       <div
-        className="w-full rounded-2xl border-[var(--radial)] border-l-30 overflow-hidden shadow-2xl shadow-black/50 hover:scale-103 hover:shadow-xl duration-200 cursor-pointer">
+        className="w-full rounded-2xl border-[var(--radial)] border-l-10 lg:border-l-30 overflow-hidden shadow-2xl shadow-black/50 hover:scale-101 hover:shadow-xl duration-100 cursor-pointer">
         <div
           className="relative bg-contain bg-center"
           style={{
@@ -34,7 +34,7 @@ export default function ProjectSummaryCard(project: Project) {
           <div className="relative z-20 flex flex-col md:flex-row justify-between gap-4 p-6 bg-black/60 backdrop-blur-sm">
 
             <div className="flex-1">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2">{project.title}</h2>
+              <h2 className="lg:text-2xl text-3xl text-auto lg:mb-2">{project.title}</h2>
               <p className="text-sm sm:text-base text-[var(--secondary)] brightness-200 mb-3 pt-3">{project.description}</p>
               <p className="text-sm font-bold font-[Consolas] text-yellow-400 text-gold">{project.technologies}</p>
             </div>

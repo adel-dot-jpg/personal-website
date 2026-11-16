@@ -23,11 +23,11 @@ const page = () => {
 		/>
 
 		<header className='lg:w-[50vw] text-center'>
-			<h1 className='text-3xl font-bold my-5 p-5 text-[var(--secondary)] brightness-150'>
+			<h1 className='text-3xl font-bold lg:my-5 p-5 text-[var(--secondary)] brightness-150'>
 				Personal Projects Reference List
 			</h1>
 
-			<p className='text-xl pl-10'>
+			<p className='text-xl px-3 lg:pl-10 lg:pr-0'>
 				Below are some cool things I made.
 			</p>
 		</header>
